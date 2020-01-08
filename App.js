@@ -3,16 +3,33 @@ import logoAdeme from './ademe.jpg'
 import logoEcolab from './ecolab.png'
 import modes from './modes.yaml'
 
+const shadowStyle =
+		'box-shadow: 0px 2px 4px -1px rgba(41, 117, 209, 0.2), 0px 4px 5px 0px rgba(41, 117, 209, 0.14), 0px 1px 10px 0px rgba(41, 117, 209, 0.12)',
+	blue = '#7b9fc4'
+
 export default () => {
 	const [distance, setDistance] = useState(1)
+	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
+		modesCommuns = modes['les deux'],
+		modesPertinents =
+			distance > limiteUrbain
+				? [...modes['extra-urbains'], ...modesCommuns]
+				: [...modes['urbains'], ...modesCommuns],
+		valeur = m => m['gCO2e/km/passager'] || m['gCO2e/km/véhicule'],
+		classement = modesPertinents.sort((m1, m2) => valeur(m1) < valeur(m2)),
+		empreinteMaximum = valeur(classement[0])
 	return (
 		<div
 			css={`
-				margin-top: 1rem;
+				margin: 1rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
 				align-items: center;
+
+				ul {
+					padding: 0;
+				}
 			`}
 		>
 			<header>
@@ -30,13 +47,17 @@ export default () => {
 			</header>
 			<section
 				css={`
+					font-size: 150%;
+					margin: 1rem;
 					input {
 						border-radius: 0.3rem;
-						border: 2px solid #7b9fc4;
+						border: 2px solid ${blue};
 						width: 4rem;
 						margin: 0 0.3rem 0 1rem;
 						padding: 0 0.3rem;
 						text-align: right;
+						font-size: inherit;
+						${shadowStyle}
 					}
 					input[type='number']::-webkit-inner-spin-button,
 					input[type='number']::-webkit-outer-spin-button {
@@ -59,20 +80,49 @@ export default () => {
 					/>
 					km
 				</label>
+				<div
+					css={`
+						ul {
+							max-width: 30rem;
+							font-size: 80%;
+						}
+						li {
+							display: inline-block;
+							margin: 0.1rem 0.2rem;
+						}
+						li button {
+							padding: 0.15rem 0.4rem;
+							border-radius: 0.3rem;
+							${shadowStyle};
+							border: 1px ${blue} solid;
+							background: white;
+							cursor: pointer;
+						}
+					`}
+				>
+					<ul>
+						{modes.suggestions.map(({ titre, km }) => (
+							<li key={titre}>
+								<button onClick={() => setDistance(km)}>{titre}</button>
+							</li>
+						))}
+					</ul>
+				</div>
 			</section>
 			<section>
 				<h2>Votre empreinte sur le climat</h2>
 				<ul>
-					{modes['urbains'].map(mode => (
-						<li key={mode} css="margin: .6rem 0; list-style-type: none">
-							{mode}
+					{classement.map(mode => (
+						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
+							{mode.titre}
 							<div
 								css={`
 									background: purple;
 									height: 1rem;
 									margin-top: 0.2rem;
 									border-radius: 0.4rem;
-									width: ${Math.random() * 100}%;
+									width: ${(valeur(mode) / empreinteMaximum) * 100}%;
+									${shadowStyle}
 								`}
 							></div>
 						</li>

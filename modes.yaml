@@ -1,26 +1,57 @@
-non-urbains:
-  - avion ✈️
-  - ferry ⛴️
-  - TGV
-  - Intercité
-  - voiture ⛽ extra-urbaine [passagers]
-  - voiture ⚡ extra-urbaine [passagers]
+limite trajet urbain: 75km
+suggestions:
+  - titre: Acheter du pain 🥖
+    km: 1
+  - titre: Aller au boulot 💼
+    km: 6
+  - titre: Traverser le région
+    km: 150
+  - titre: Traverser la France
+    km: 900
+  - titre: Aller voir des kangourous 🦘
+    km: 17000
+
+extra-urbains:
+  - titre: Avion ✈️
+    gCO2e/km/passager: 200
+  - titre: Ferry ⛴️
+    gCO2e/km/passager: 100
+  - titre: TGV
+    gCO2e/km/passager: 69
+  - titre: Intercité
+    gCO2e/km/passager: 78
+  - titre: Voiture ⛽ extra-urbaine
+    gCO2e/km/véhicule: 67
+  - titre: Voiture ⚡ extra-urbaine
+    gCO2e/km/véhicule: 13
 
 urbains:
-  - vélo
-  - vélo ⚡
-  - marche
-  - bus urbain
-  - autocar
-  - tramway < 100km
-  - métro
-  - voiture ⛽ urbaine [passagers]
-  - voiture ⚡ urbaine [passagers]
+  - titre: Vélo
+    gCO2e/km/passager: 789
+  - titre: Vélo ⚡
+    gCO2e/km/passager: 249
+  - titre: Marche
+    gCO2e/km/passager: 238
+  - titre: Bus urbain
+    gCO2e/km/passager: 40
+  - titre: Autocar
+    gCO2e/km/passager: 20
+  - titre: Tramway
+    gCO2e/km/passager: 70
+  - titre: Métro
+    gCO2e/km/passager: 90
+  - titre: Voiture ⛽ urbaine
+    gCO2e/km/véhicule: 178
+  - titre: Voiture ⚡ extra-urbaine
+    gCO2e/km/véhicule: 276
 
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
-  - 2 roues ⛽ [passagers]
+  - titre: Deux roues ⛽
+    gCO2e/km/passager: 890
   # - 2 roues ⚡ [passagers] Pas encore de donnée
-  - RER/Transilien
-  - TER
+  - titre: RER ou Transilien
+    gCO2e/km/passager: 98
+  - titre: TER
+    gCO2e/km/passager: 68
