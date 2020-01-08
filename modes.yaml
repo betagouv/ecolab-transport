@@ -1,0 +1,26 @@
+non-urbains:
+  - avion ✈️
+  - ferry ⛴️
+  - TGV
+  - Intercité
+  - voiture ⛽ extra-urbaine [passagers]
+  - voiture ⚡ extra-urbaine [passagers]
+
+urbains:
+  - vélo
+  - vélo ⚡
+  - marche
+  - bus urbain
+  - autocar
+  - tramway < 100km
+  - métro
+  - voiture ⛽ urbaine [passagers]
+  - voiture ⚡ urbaine [passagers]
+
+# Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
+# et nous ne disponsons pas d'un facteur d'émission différents par zone
+les deux:
+  - 2 roues ⛽ [passagers]
+  # - 2 roues ⚡ [passagers] Pas encore de donnée
+  - RER/Transilien
+  - TER

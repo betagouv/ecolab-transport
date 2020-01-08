@@ -22,6 +22,19 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.(jpe?g|png|svg)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'images/[name].[ext]'
+					}
+				}
+			},
+			{
+				test: /\.yaml$/,
+				use: 'js-yaml-loader'
 			}
 		]
 	},
