@@ -32,7 +32,7 @@ urbains:
     gCO2e/km/passager: 249
   - titre: Marche
     gCO2e/km/passager: 238
-  - titre: Bus urbain
+  - titre: Bus
     gCO2e/km/passager: 40
   - titre: Autocar
     gCO2e/km/passager: 20
@@ -42,7 +42,7 @@ urbains:
     gCO2e/km/passager: 90
   - titre: Voiture ⛽ urbaine
     gCO2e/km/véhicule: 178
-  - titre: Voiture ⚡ extra-urbaine
+  - titre: Voiture ⚡ urbaine
     gCO2e/km/véhicule: 276
 
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,

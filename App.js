@@ -52,7 +52,7 @@ export default () => {
 					input {
 						border-radius: 0.3rem;
 						border: 2px solid ${blue};
-						width: 4rem;
+						width: 6rem;
 						margin: 0 0.5rem 0 1rem;
 						padding: 0 0.3rem;
 						text-align: right;
