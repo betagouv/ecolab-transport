@@ -47,13 +47,13 @@ export default () => {
 			</header>
 			<section
 				css={`
-					font-size: 150%;
+					font-size: 160%;
 					margin: 1rem;
 					input {
 						border-radius: 0.3rem;
 						border: 2px solid ${blue};
 						width: 4rem;
-						margin: 0 0.3rem 0 1rem;
+						margin: 0 0.5rem 0 1rem;
 						padding: 0 0.3rem;
 						text-align: right;
 						font-size: inherit;
@@ -91,7 +91,7 @@ export default () => {
 							margin: 0.1rem 0.2rem;
 						}
 						li button {
-							padding: 0.15rem 0.4rem;
+							padding: 0.15rem 0.4rem 0.3rem;
 							border-radius: 0.3rem;
 							${shadowStyle};
 							border: 1px ${blue} solid;
@@ -103,7 +103,16 @@ export default () => {
 					<ul>
 						{modes.suggestions.map(({ titre, km }) => (
 							<li key={titre}>
-								<button onClick={() => setDistance(km)}>{titre}</button>
+								<button
+									onClick={() => setDistance(km)}
+									css={
+										distance === km
+											? `background: ${blue} !important; color: white;`
+											: ``
+									}
+								>
+									{titre}
+								</button>
 							</li>
 						))}
 					</ul>
