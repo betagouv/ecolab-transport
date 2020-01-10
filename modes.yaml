@@ -54,66 +54,62 @@ extra-urbains:
         9000-10000 km: 223
         10000-11000 km: 216
         11000-∞ km: 223
-
-          
-
-          
-
-      
-    variable: | 
-      nombre de sièges : 
-      0 50 100 180 250
     
-  - titre: Ferry ⛴️
-    gCO2e/km/passager: 100
-    variable: | 
-        jour / nuit
+  - titre: ferry
+    icônes: ⛴️
+    gCO2e/km/passager:
+      de nuit: 524
+      de jour: 978
   - titre: TGV
-    gCO2e/km/passager: 69
-  - titre: Intercité
-    gCO2e/km/passager: 78
-  - titre: Voiture ⛽ extra-urbaine
-    gCO2e/km/véhicule: 67
-  - titre: Voiture ⚡ extra-urbaine
-    gCO2e/km/véhicule: 13
+    gCO2e/km/passager: 3.69
+    #  - titre: Intercité
+    # gCO2e/km/passager: 78
+  - titre: voiture thermique
+    icônes: ⛽
+    gCO2e/km/passager: 69.5
+    source: onglet autres sources
+    #  - titre: Voiture ⚡ extra-urbaine
+    #gCO2e/km/véhicule: 13
 
 urbains:
-  - titre: Vélo
-    gCO2e/km/passager: 789
-  - titre: Vélo ⚡
-    gCO2e/km/passager: 249
-  - titre: Marche
-    gCO2e/km/passager: 238
-  - titre: Bus
-    gCO2e/km/passager: 40
-    variable: |
-            taille agglomération:
-                    0 150k 250k habitants
-  - titre: Autocar
-    gCO2e/km/passager: 20
-  - titre: Tramway
-    gCO2e/km/passager: 70
-    variable: |
-            taille agglomération:
-                    150k 250k habitants
-                    n'a pas l'air d'avoir une grosse influence
-
-  - titre: Métro
-    gCO2e/km/passager: 90
-  - titre: Voiture ⛽ urbaine
-    gCO2e/km/véhicule: 178
-  - titre: Voiture ⚡ urbaine
-    gCO2e/km/véhicule: 276
+  - titre: vélo
+    gCO2e/km/passager: 0 #AFAIRE
+  - titre: vélo ⚡
+    gCO2e/km/passager: 0 #AFAIRE
+  - titre: marche
+    gCO2e/km/passager: 0 #AFAIRE
+  - titre: bus
+    gCO2e/km/passager: 
+      0-150 k habitants: 181
+      150-250 k habitants: 167
+      250-∞ k habitants: 154
+  - titre: autocar
+    gCO2e/km/passager: 58.5
+    source: onglet autres sources
+  - titre: tram
+    gCO2e/km/passager: 
+      150-250 k habitants: 6.81
+      250-∞ k habitants: 6.64
+  - titre: métro
+    gCO2e/km/passager: 5.7
+  - titre: voiture 
+    icônes: ⛽
+    gCO2e/km/véhicule: 231.7 
+    source: onglet autres sources
+    #  - titre: Voiture ⚡ urbaine
+    #gCO2e/km/véhicule: 276
 
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
-  - titre: Deux roues ⛽
-    gCO2e/km/passager: 90
+  - titre: deux roues thermique
+    icônes: ⛽
+    gCO2e/km/passager: 110.7
+    source: onglet autres sources
   # - 2 roues ⚡ [passagers] Pas encore de donnée
   - titre: RER ou Transilien
-    gCO2e/km/passager: 98
+    gCO2e/km/passager: 5.8
   - titre: TER
-    gCO2e/km/passager: 68
-    variable: |
-        électrique / diesel
+    gCO2e/km/passager:
+      électrique: 8.91
+      diesel: 79.8

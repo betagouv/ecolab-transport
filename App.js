@@ -15,20 +15,35 @@ export default () => {
 			distance > limiteUrbain
 				? [...modes['extra-urbains'], ...modesCommuns]
 				: [...modes['urbains'], ...modesCommuns],
+		dansIntervalle = (intervalle, unité) => {
+			const de = +intervalle.split('-')[0],
+				àRaw = intervalle.split('-')[1].split(' ' + unité)[0],
+				à = àRaw === '∞' ? Infinity : +àRaw
+
+			return distance > de && distance <= à
+		},
 		valeur = m => {
 			const parPassager = m['gCO2e/km/passager'],
 				parVéhicule = m['gCO2e/km/véhicule']
 
+			if (m.titre === 'TER') {
+			}
+			if (['bus', 'tram', 'ferry', 'TER'].includes(m.titre)) {
+				/* Once the inhabitants and other variables are known :
+				return Object.entries(parPassager).find(
+					([intervalle]) => dansIntervalle
+				)[1]
+
+				*/
+				const valeurs = Object.values(parPassager)
+				return valeurs.reduce((memo, next) => memo + next, 0) / valeurs.length
+			}
 			if (m.titre === 'avion') {
 				let chiffresPertinents = Object.values(parPassager)
 					.map(intervalles =>
-						Object.entries(intervalles).find(([intervalle, résultat]) => {
-							let de = +intervalle.split('-')[0],
-								àRaw = intervalle.split('-')[1].split(' km')[0],
-								à = àRaw === '∞' ? Infinity : +àRaw
-
-							return distance > de && distance <= à
-						})
+						Object.entries(intervalles).find(([intervalle]) =>
+							dansIntervalle(intervalle, 'km')
+						)
 					)
 					.filter(Boolean)
 				return (
@@ -145,7 +160,7 @@ export default () => {
 				`}
 			>
 				<h2>Votre empreinte sur le climat</h2>
-				<small>En grammes de gaz à effet de serre (gCO2) par personne</small>
+				<small>En kilos de gaz à effet de serre (kgCO2) par personne</small>
 				<ul>
 					{classement.map(mode => (
 						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
@@ -164,7 +179,7 @@ export default () => {
 										${shadowStyle}
 									`}
 								>
-									{valeur(mode)}
+									{Math.round(valeur(mode) * distance)}
 								</span>
 							</div>
 						</li>
