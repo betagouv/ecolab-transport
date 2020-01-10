@@ -15,7 +15,29 @@ export default () => {
 			distance > limiteUrbain
 				? [...modes['extra-urbains'], ...modesCommuns]
 				: [...modes['urbains'], ...modesCommuns],
-		valeur = m => m['gCO2e/km/passager'] || m['gCO2e/km/véhicule'],
+		valeur = m => {
+			const parPassager = m['gCO2e/km/passager'],
+				parVéhicule = m['gCO2e/km/véhicule']
+
+			if (m.titre === 'avion') {
+				let chiffresPertinents = Object.values(parPassager)
+					.map(intervalles =>
+						Object.entries(intervalles).find(([intervalle, résultat]) => {
+							let de = +intervalle.split('-')[0],
+								àRaw = intervalle.split('-')[1].split(' km')[0],
+								à = àRaw === '∞' ? Infinity : +àRaw
+
+							return distance > de && distance <= à
+						})
+					)
+					.filter(Boolean)
+				return (
+					chiffresPertinents.reduce((memo, [, next]) => memo + next, 0) /
+					chiffresPertinents.length
+				)
+			}
+			return parPassager != null ? parPassager : parVéhicule
+		},
 		classement = modesPertinents.sort((m1, m2) => valeur(m1) < valeur(m2)),
 		empreinteMaximum = valeur(classement[0])
 	return (
@@ -123,7 +145,7 @@ export default () => {
 				`}
 			>
 				<h2>Votre empreinte sur le climat</h2>
-				<small>En grammes de gaz à effet de serre (gCO2e/passager)</small>
+				<small>En grammes de gaz à effet de serre (gCO2) par personne</small>
 				<ul>
 					{classement.map(mode => (
 						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
