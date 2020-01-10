@@ -111,22 +111,39 @@ export default () => {
 					</ul>
 				</div>
 			</section>
-			<section>
+			<section
+				css={`
+					h2 {
+						margin-bottom: 0.1rem;
+					}
+					small {
+						margin-bottom: 2rem;
+						font-style: italic;
+					}
+				`}
+			>
 				<h2>Votre empreinte sur le climat</h2>
+				<small>En grammes de gaz à effet de serre (gCO2e/passager)</small>
 				<ul>
 					{classement.map(mode => (
 						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
 							{mode.titre}
-							<div
-								css={`
-									background: purple;
-									height: 1rem;
-									margin-top: 0.2rem;
-									border-radius: 0.4rem;
-									width: ${(valeur(mode) / empreinteMaximum) * 100}%;
-									${shadowStyle}
-								`}
-							></div>
+							<div>
+								<span
+									css={`
+										display: inline-block;
+										background: purple;
+										margin-top: 0.2rem;
+										border-radius: 0.4rem;
+										padding-left: 0.4rem;
+										width: ${(valeur(mode) / empreinteMaximum) * 100}%;
+										color: white;
+										${shadowStyle}
+									`}
+								>
+									{valeur(mode)}
+								</span>
+							</div>
 						</li>
 					))}
 				</ul>

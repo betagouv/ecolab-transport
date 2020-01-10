@@ -14,8 +14,13 @@ suggestions:
 extra-urbains:
   - titre: Avion ✈️
     gCO2e/km/passager: 200
+    variable: | 
+      nombre de sièges : 
+      0 50 100 180 250
   - titre: Ferry ⛴️
     gCO2e/km/passager: 100
+    variable: | 
+        jour / nuit
   - titre: TGV
     gCO2e/km/passager: 69
   - titre: Intercité
@@ -34,10 +39,18 @@ urbains:
     gCO2e/km/passager: 238
   - titre: Bus
     gCO2e/km/passager: 40
+    variable: |
+            taille agglomération:
+                    0 150k 250k habitants
   - titre: Autocar
     gCO2e/km/passager: 20
   - titre: Tramway
     gCO2e/km/passager: 70
+    variable: |
+            taille agglomération:
+                    150k 250k habitants
+                    n'a pas l'air d'avoir une grosse influence
+
   - titre: Métro
     gCO2e/km/passager: 90
   - titre: Voiture ⛽ urbaine
@@ -55,3 +68,5 @@ les deux:
     gCO2e/km/passager: 98
   - titre: TER
     gCO2e/km/passager: 68
+    variable: |
+        électrique / diesel
