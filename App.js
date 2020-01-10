@@ -28,7 +28,7 @@ export default () => {
 
 			if (m.titre === 'TER') {
 			}
-			if (['bus', 'tram', 'ferry', 'TER'].includes(m.titre)) {
+			if (['bus', 'tram ou trolleybus', 'ferry', 'TER'].includes(m.titre)) {
 				/* Once the inhabitants and other variables are known :
 				return Object.entries(parPassager).find(
 					([intervalle]) => dansIntervalle

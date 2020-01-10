@@ -61,11 +61,12 @@ extra-urbains:
       de nuit: 524
       de jour: 978
   - titre: TGV
+    icônes: 🚄
     gCO2e/km/passager: 3.69
     #  - titre: Intercité
     # gCO2e/km/passager: 78
   - titre: voiture thermique
-    icônes: ⛽
+    icônes: 🚗⛽
     gCO2e/km/passager: 69.5
     source: onglet autres sources
     #  - titre: Voiture ⚡ extra-urbaine
@@ -73,27 +74,34 @@ extra-urbains:
 
 urbains:
   - titre: vélo
+    icônes: 🚴
     gCO2e/km/passager: 0 #AFAIRE
-  - titre: vélo ⚡
+  - titre: vélo électrique
+    icônes: 🚴⚡ 
     gCO2e/km/passager: 0 #AFAIRE
   - titre: marche
+    icônes: 🚶
     gCO2e/km/passager: 0 #AFAIRE
   - titre: bus
+    icônes: 🚌🏙️
     gCO2e/km/passager: 
       0-150 k habitants: 181
       150-250 k habitants: 167
       250-∞ k habitants: 154
   - titre: autocar
+    icônes: 🚌
     gCO2e/km/passager: 58.5
     source: onglet autres sources
-  - titre: tram
+  - titre: tram ou trolleybus
+    icônes: 🚋🚎
     gCO2e/km/passager: 
       150-250 k habitants: 6.81
       250-∞ k habitants: 6.64
   - titre: métro
+    icônes: 🚇
     gCO2e/km/passager: 5.7
-  - titre: voiture 
-    icônes: ⛽
+  - titre: voiture thermique
+    icônes: 🚗⛽
     gCO2e/km/véhicule: 231.7 
     source: onglet autres sources
     #  - titre: Voiture ⚡ urbaine
@@ -103,13 +111,15 @@ urbains:
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
   - titre: deux roues thermique
-    icônes: ⛽
+    icônes: 🛵🏍️⛽
     gCO2e/km/passager: 110.7
     source: onglet autres sources
   # - 2 roues ⚡ [passagers] Pas encore de donnée
   - titre: RER ou Transilien
+    icônes: 🚈
     gCO2e/km/passager: 5.8
   - titre: TER
+    icônes: 🚈🏙️
     gCO2e/km/passager:
       électrique: 8.91
       diesel: 79.8
