@@ -8,7 +8,7 @@ const shadowStyle =
 	blue = '#7b9fc4'
 
 export default () => {
-	const [distance, setDistance] = useState(1)
+	const [distance, setDistance] = useState(10)
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
 		modesCommuns = modes['les deux'],
 		modesPertinents =
@@ -53,8 +53,17 @@ export default () => {
 			}
 			return parPassager != null ? parPassager : parVéhicule
 		},
-		classement = modesPertinents.sort((m1, m2) => valeur(m1) < valeur(m2)),
-		empreinteMaximum = valeur(classement[0])
+		classement = modesPertinents.sort((m1, m2) => valeur(m1) - valeur(m2)),
+		empreinteMaximum = valeur(classement[classement.length - 1]),
+		valeurAffichée = mode => {
+			const résultat = (valeur(mode) / 1000) * distance
+			return résultat === 0
+				? 0
+				: résultat < 10
+				? résultat.toFixed(1)
+				: Math.round(résultat)
+		}
+
 	return (
 		<div
 			css={`
@@ -84,8 +93,8 @@ export default () => {
 			</header>
 			<section
 				css={`
-					font-size: 160%;
-					margin: 1rem;
+					font-size: 150%;
+					margin: 1rem 0 0rem;
 
 					max-width: 30rem;
 					input {
@@ -154,32 +163,44 @@ export default () => {
 						margin-bottom: 0.1rem;
 					}
 					small {
-						margin-bottom: 2rem;
+						margin-bottom: 3rem;
 						font-style: italic;
 					}
 				`}
 			>
 				<h2>Votre empreinte sur le climat</h2>
-				<small>En kilos de gaz à effet de serre (kgCO2) par personne</small>
+				<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
 				<ul>
 					{classement.map(mode => (
 						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
-							{mode.titre}
 							<div>
+								<span>{capitalizeFirst(mode.titre)}</span>
+							</div>
+							<div
+								css={`
+									display: flex;
+									align-items: center;
+								`}
+							>
+								<span css="font-size: 100%; margin-left: -2rem; margin-right: .6rem">
+									{mode.icônes}
+								</span>
 								<span
 									css={`
 										display: inline-block;
 										background: purple;
 										margin-top: 0.2rem;
-										height: 1.2rem;
+										margin-right: 0.8rem;
+										height: 1rem;
+										padding-left: 0.1rem;
 										border-radius: 0.4rem;
-										padding-left: 0.4rem;
-										width: ${(valeur(mode) / empreinteMaximum) * 100}%;
+										width: ${(valeur(mode) / empreinteMaximum) * 100 * 0.9}%;
 										color: white;
 										${shadowStyle}
 									`}
-								>
-									{Math.round(valeur(mode) * distance)}
+								></span>
+								<span css="color: purple; font-weight: 600; vertical-align: baseline;">
+									{valeurAffichée(mode)}
 								</span>
 							</div>
 						</li>
@@ -189,3 +210,5 @@ export default () => {
 		</div>
 	)
 }
+const capitalizeFirst = text =>
+	text[0].toUpperCase() + text.slice(1, text.length)
