@@ -49,6 +49,8 @@ export default () => {
 				css={`
 					font-size: 160%;
 					margin: 1rem;
+
+					max-width: 30rem;
 					input {
 						border-radius: 0.3rem;
 						border: 2px solid ${blue};
@@ -83,36 +85,27 @@ export default () => {
 				<div
 					css={`
 						ul {
-							max-width: 30rem;
-							font-size: 80%;
+							font-size: 75%;
 						}
 						li {
 							display: inline-block;
-							margin: 0.1rem 0.2rem;
+							margin: 0.1rem 0.4rem;
 						}
-						li button {
-							padding: 0.15rem 0.4rem 0.3rem;
-							border-radius: 0.3rem;
-							${shadowStyle};
-							border: 1px ${blue} solid;
-							background: white;
-							cursor: pointer;
+						li a {
+							font-size: 80%;
 						}
 					`}
 				>
 					<ul>
 						{modes.suggestions.map(({ titre, km }) => (
 							<li key={titre}>
-								<button
+								<a
+									href="#"
 									onClick={() => setDistance(km)}
-									css={
-										distance === km
-											? `background: ${blue} !important; color: white;`
-											: ``
-									}
+									css={distance === km ? `background: yellow;` : ``}
 								>
 									{titre}
-								</button>
+								</a>
 							</li>
 						))}
 					</ul>
