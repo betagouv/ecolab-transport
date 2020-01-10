@@ -134,6 +134,7 @@ export default () => {
 										display: inline-block;
 										background: purple;
 										margin-top: 0.2rem;
+										height: 1.2rem;
 										border-radius: 0.4rem;
 										padding-left: 0.4rem;
 										width: ${(valeur(mode) / empreinteMaximum) * 100}%;
