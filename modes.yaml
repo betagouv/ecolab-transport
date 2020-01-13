@@ -10,6 +10,8 @@ suggestions:
     km: 900
   - titre: Voyager en Europe
     km: 3000
+  - titre: Voyager dans le monde
+    km: 10000
 
 extra-urbains:
   - titre: avion 
