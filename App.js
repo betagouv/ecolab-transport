@@ -87,7 +87,9 @@ export default () => {
 					`}
 				>
 					<img css="height: 6vh" src={logoAdeme} />
-					<img css="height: 5vh" src={logoEcolab} />
+					<a href="https://ecolab.ademe.fr">
+						<img css="height: 5vh" src={logoEcolab} />
+					</a>
 				</div>
 				<h1>Mon déplacement est-il écolo ?</h1>
 			</header>
