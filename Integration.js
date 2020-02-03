@@ -10,22 +10,27 @@ export default ({ setRouter }) => {
 		script.dataset.couleur = 'purple'
 		script.dataset.fromUE = 'yes'
 
-		document.body.appendChild(script)
+		document.querySelector('#app').appendChild(script)
 
 		return () => {
-			document.body.removeChild(script)
+			document.querySelector('#app').removeChild(script)
 		}
 	}, [])
 
 	return (
 		<div>
-			<h1>Intégrez le module de calcul sur votre site Web</h1>
-			<p>En ajoutant une ligne à votre page Web :</p>
-			<IntegrationCode />
-			<p>Voici ce que donne l'intégration</p>
 			<button onClick={() => setRouter('app')}>
 				Retourner au calculateur{' '}
 			</button>
+			<h1>Le module de calcul chez vous</h1>
+			<p>
+				Intégrez notre module de calcul chez vous, par exemple rendre un article
+				de blog plus intéractif pour le lecteur, simplement en ajoutant cette
+				ligne à votre page Web :
+			</p>
+			<IntegrationCode />
+			<h2>Exemple</h2>
+			<p>Voici ce que donne l'intégration :</p>
 		</div>
 	)
 }
@@ -68,9 +73,7 @@ export let IntegrationCode = ({ color = 'purple' }) => (
 			id
 		</em>
 		="ecolab-transport" <em>data-couleur</em>="
-		<span id="scriptColor">{color}</span>" <em>src</em>
-		="https://ecolab-transport.netlify.com/iframe.js">
-		<span>{'<'}</span>
+		<span id="scriptColor">{color}</span>" <em>src</em>={src}><span>{'<'}</span>
 		<span>/</span>
 		<em>script</em>
 		<span>></span>

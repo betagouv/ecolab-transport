@@ -6,10 +6,11 @@ import Integration from './Integration'
 const Index = ({}) => {
 	const [router, setRouter] = useState('app')
 
-	return {
-		app: <App setRouter={setRouter} />,
-		integration: <Integration setRouter={setRouter} />
-	}[router]
+	return router === 'app' ? (
+		<App setRouter={setRouter} />
+	) : (
+		<Integration setRouter={setRouter} />
+	)
 }
 
 ReactDOM.render(<Index />, document.getElementById('app'))

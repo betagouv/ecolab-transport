@@ -3,7 +3,9 @@ import { iframeResizer } from 'iframe-resizer'
 let script = document.getElementById('ecolab-transport'),
 	couleur = encodeURIComponent(script.dataset.couleur),
 	integratorUrl = encodeURIComponent(window.location.href.toString()),
-	src = `${script.src}?couleur=${couleur}&iframe&integratorUrl=${integratorUrl}`
+	src = `${
+		script.src.split('/')[0]
+	}?couleur=${couleur}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
 const iframeAttributes = {
