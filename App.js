@@ -7,6 +7,8 @@ const shadowStyle =
 		'box-shadow: 0px 2px 4px -1px rgba(41, 117, 209, 0.2), 0px 4px 5px 0px rgba(41, 117, 209, 0.14), 0px 1px 10px 0px rgba(41, 117, 209, 0.12)',
 	blue = '#7b9fc4'
 
+const maxWidth = '45rem'
+
 export default () => {
 	const [distance, setDistance] = useState(10)
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
@@ -76,6 +78,10 @@ export default () => {
 				ul {
 					padding: 0;
 				}
+				h1 {
+					font-size: 165%;
+					margin: 0.5rem;
+				}
 			`}
 		>
 			<header>
@@ -95,10 +101,12 @@ export default () => {
 			</header>
 			<section
 				css={`
-					font-size: 150%;
-					margin: 1rem 0 0rem;
+					font-size: 140%;
 
-					max-width: 30rem;
+					label {
+						text-align: center;
+					}
+
 					input {
 						border-radius: 0.3rem;
 						border: 2px solid ${blue};
@@ -120,24 +128,35 @@ export default () => {
 				`}
 			>
 				<label>
-					Quelle distance ?
-					<input
-						type="number"
-						max="40000"
-						min="0"
-						value={distance}
-						onChange={({ target: { value } }) => setDistance(value)}
-					/>
-					km
+					<div>Quelle distance&nbsp;?</div>
+					<div css="margin-top: .6rem;">
+						<input
+							type="number"
+							max="40000"
+							min="0"
+							value={distance}
+							onChange={({ target: { value } }) => setDistance(value)}
+						/>
+						km
+					</div>
 				</label>
 				<div
 					css={`
 						ul {
 							font-size: 75%;
+							padding: 0.6rem;
+							margin: 0rem;
+						}
+						@media (max-width: 800px) {
+							ul {
+								white-space: nowrap;
+								overflow-x: auto;
+								width: 90vw;
+							}
 						}
 						li {
 							display: inline-block;
-							margin: 0.1rem 0.4rem;
+							margin: 0rem 0.4rem;
 						}
 						li a {
 							font-size: 80%;
@@ -161,8 +180,11 @@ export default () => {
 			</section>
 			<section
 				css={`
+					@media (min-width: 800px) {
+						margin: 2rem;
+					}
 					h2 {
-						margin-bottom: 0.1rem;
+						margin: 0.6rem 0 0.1rem;
 					}
 					small {
 						margin-bottom: 3rem;
@@ -173,7 +195,7 @@ export default () => {
 					}
 				`}
 			>
-				<h2>Votre empreinte sur le climat</h2>
+				<h2>Votre empreinte climat</h2>
 				<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
 				<ul>
 					{classement.map(mode => (
@@ -187,7 +209,7 @@ export default () => {
 									align-items: center;
 								`}
 							>
-								<span css="font-size: 100%; margin-left: -2rem; margin-right: .6rem">
+								<span css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem">
 									{mode.icônes}
 								</span>
 								<span
