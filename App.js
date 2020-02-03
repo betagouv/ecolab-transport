@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import logoAdeme from './ademe.jpg'
 import logoEcolab from './ecolab.png'
 import modes from './modes.yaml'
+import Covoitureurs from './Covoitureurs'
 
 const shadowStyle =
 		'box-shadow: 0px 2px 4px -1px rgba(41, 117, 209, 0.2), 0px 4px 5px 0px rgba(41, 117, 209, 0.14), 0px 1px 10px 0px rgba(41, 117, 209, 0.12)',
 	blue = '#7b9fc4'
 
-const maxWidth = '45rem'
-
 export default () => {
 	const [distance, setDistance] = useState(10)
+	const [options, setOptions] = useState({})
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
 		modesCommuns = modes['les deux'],
 		modesPertinents =
@@ -24,24 +24,32 @@ export default () => {
 
 			return distance > de && distance <= à
 		},
-		valeur = m => {
-			const parPassager = m['gCO2e/km/passager'],
-				parVéhicule = m['gCO2e/km/véhicule']
+		valeur = (m, { voyageurs } = {}) => {
+			const parPersonne = m['gCO2e/km/personne']
+
+			if (m.titre.includes('voiture')) {
+				const parVoiture = m.voyageurs * parPersonne
+				return parVoiture / (voyageurs || m.voyageurs)
+			}
 
 			if (m.titre === 'TER') {
 			}
-			if (['bus', 'tram ou trolleybus', 'ferry', 'TER'].includes(m.titre)) {
+			if (
+				['bus thermique', 'tram ou trolleybus', 'ferry', 'TER'].includes(
+					m.titre
+				)
+			) {
 				/* Once the inhabitants and other variables are known :
-				return Object.entries(parPassager).find(
+				return Object.entries(parPersonne).find(
 					([intervalle]) => dansIntervalle
 				)[1]
 
 				*/
-				const valeurs = Object.values(parPassager)
+				const valeurs = Object.values(parPersonne)
 				return valeurs.reduce((memo, next) => memo + next, 0) / valeurs.length
 			}
 			if (m.titre === 'avion') {
-				let chiffresPertinents = Object.values(parPassager)
+				let chiffresPertinents = Object.values(parPersonne)
 					.map(intervalles =>
 						Object.entries(intervalles).find(([intervalle]) =>
 							dansIntervalle(intervalle, 'km')
@@ -53,12 +61,12 @@ export default () => {
 					chiffresPertinents.length
 				)
 			}
-			return parPassager != null ? parPassager : parVéhicule
+			return parPersonne
 		},
 		classement = modesPertinents.sort((m1, m2) => valeur(m1) - valeur(m2)),
 		empreinteMaximum = valeur(classement[classement.length - 1]),
-		valeurAffichée = mode => {
-			const résultat = (valeur(mode) / 1000) * distance
+		valeurAffichée = valeur => {
+			const résultat = (valeur / 1000) * distance
 			return résultat === 0
 				? 0
 				: résultat < 10
@@ -211,6 +219,13 @@ export default () => {
 						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
 							<div>
 								<span>{capitalizeFirst(mode.titre)}</span>
+
+								{mode.titre.includes('voiture') && (
+									<Covoitureurs
+										voyageurs={options.voyageurs || mode.voyageurs}
+										setVoyageurs={n => setOptions({ ...options, voyageurs: n })}
+									/>
+								)}
 							</div>
 							<div
 								css={`
@@ -230,13 +245,15 @@ export default () => {
 										height: 1rem;
 										padding-left: 0.1rem;
 										border-radius: 0.4rem;
-										width: ${(valeur(mode) / empreinteMaximum) * 100 * 0.9}%;
+										width: ${(valeur(mode, options) / empreinteMaximum) *
+											100 *
+											0.9}%;
 										color: white;
 										${shadowStyle}
 									`}
 								></span>
 								<span css="color: purple; font-weight: 600; vertical-align: baseline;">
-									{valeurAffichée(mode)}
+									{valeurAffichée(valeur(mode, options))}
 								</span>
 							</div>
 						</li>
