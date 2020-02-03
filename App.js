@@ -82,6 +82,10 @@ export default () => {
 					font-size: 165%;
 					margin: 0.5rem;
 				}
+
+				header {
+					margin-bottom: 1rem;
+				}
 			`}
 		>
 			<header>
@@ -97,7 +101,6 @@ export default () => {
 						<img css="height: 5vh" src={logoEcolab} />
 					</a>
 				</div>
-				<h1>Mon déplacement est-il écolo ?</h1>
 			</header>
 			<section
 				css={`
