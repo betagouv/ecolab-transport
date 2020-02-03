@@ -132,7 +132,7 @@ export default () => {
 			>
 				<label>
 					<div>Quelle distance&nbsp;?</div>
-					<div css="margin-top: .6rem;">
+					<div css="margin-top: .8rem;">
 						<input
 							type="number"
 							max="40000"
@@ -163,6 +163,13 @@ export default () => {
 						}
 						li a {
 							font-size: 80%;
+							cursor: pointer;
+							padding: 0.1rem 0.3rem;
+						}
+						li a:hover {
+							background: purple;
+							color: white;
+							border-radius: 0.3rem;
 						}
 					`}
 				>
@@ -170,7 +177,6 @@ export default () => {
 						{modes.suggestions.map(({ titre, km }) => (
 							<li key={titre}>
 								<a
-									href="#"
 									onClick={() => setDistance(km)}
 									css={distance === km ? `background: yellow;` : ``}
 								>
