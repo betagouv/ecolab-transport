@@ -8,7 +8,7 @@ const shadowStyle =
 		'box-shadow: 0px 2px 4px -1px rgba(41, 117, 209, 0.2), 0px 4px 5px 0px rgba(41, 117, 209, 0.14), 0px 1px 10px 0px rgba(41, 117, 209, 0.12)',
 	blue = '#7b9fc4'
 
-export default () => {
+export default ({ setRouter }) => {
 	const [distance, setDistance] = useState(10)
 	const [options, setOptions] = useState({})
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
@@ -261,6 +261,12 @@ export default () => {
 					))}
 				</ul>
 			</section>
+
+			<div>
+				<button onClick={() => setRouter('integration')}>
+					Intégrez ce calculateur sur votre site{' '}
+				</button>
+			</div>
 		</div>
 	)
 }
