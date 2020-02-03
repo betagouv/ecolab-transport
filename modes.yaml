@@ -81,7 +81,7 @@ urbains:
   - titre: vélo ou vélo électrique
     icônes: 🚴
     gCO2e/km/passager: 0 #AFAIRE
-  - titre: bus
+  - titre: bus thermique
     icônes: 🚌
     gCO2e/km/passager: 
       0-150 k habitants: 181
