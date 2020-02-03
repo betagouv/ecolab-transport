@@ -166,6 +166,9 @@ export default () => {
 						margin-bottom: 3rem;
 						font-style: italic;
 					}
+					ul {
+						margin-left: 2rem;
+					}
 				`}
 			>
 				<h2>Votre empreinte sur le climat</h2>
