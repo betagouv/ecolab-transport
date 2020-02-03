@@ -86,8 +86,8 @@ export default () => {
 						align-items: center;
 					`}
 				>
-					<img css="width: 4rem" src={logoAdeme} />
-					<img css="width: 10rem" src={logoEcolab} />
+					<img css="height: 6vh" src={logoAdeme} />
+					<img css="height: 5vh" src={logoEcolab} />
 				</div>
 				<h1>Mon déplacement est-il écolo ?</h1>
 			</header>
