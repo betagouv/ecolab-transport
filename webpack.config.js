@@ -38,8 +38,10 @@ module.exports = {
 			}
 		]
 	},
-	entry: './index.js',
-
+	entry: {
+		app: './index.js',
+		iframe: './iframe.js'
+	},
 	output: {
 		filename: 'index.js',
 		path: __dirname + '/dist',
@@ -54,6 +56,7 @@ module.exports = {
 			new ReactRefreshWebpackPlugin({ disableRefreshCheck: true }),
 		new HtmlWebpackPlugin({
 			title: 'Ecolab transport',
+			chunks: ['app'],
 			template: 'index.html'
 		})
 	].filter(Boolean)

@@ -112,6 +112,7 @@ export default () => {
 			</header>
 			<section
 				css={`
+					margin: 0 0 0.4rem 0;
 					font-size: 140%;
 
 					label {
