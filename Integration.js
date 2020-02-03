@@ -8,6 +8,7 @@ export default ({ setRouter }) => {
 		script.src = src
 		script.id = 'ecolab-transport'
 		script.dataset.couleur = 'purple'
+		script.dataset.fromUE = 'yes'
 
 		document.body.appendChild(script)
 
