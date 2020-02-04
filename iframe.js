@@ -1,4 +1,4 @@
-import { iframeResizer } from 'iframe-resizer'
+import { iframeResize } from 'iframe-resizer'
 
 const script = document.getElementById('ecolab-transport'),
 	couleur = encodeURIComponent(script.dataset.couleur),
@@ -6,7 +6,11 @@ const script = document.getElementById('ecolab-transport'),
 	tmp = document.createElement('a')
 
 tmp.href = script.src
-const src = `https://${tmp.hostname}?couleur=${couleur}&iframe&integratorUrl=${integratorUrl}`
+const baseUrl =
+		location.hostname === 'localhost'
+			? 'http://localhost:8080/'
+			: 'https://' + tmp.hostname,
+	src = `${baseUrl}?couleur=${couleur}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
 
@@ -21,7 +25,7 @@ const iframeAttributes = {
 for (var key in iframeAttributes) {
 	iframe.setAttribute(key, iframeAttributes[key])
 }
-iframeResizer(
+iframeResize(
 	{
 		interval: 0,
 		scrolling: 'auto',

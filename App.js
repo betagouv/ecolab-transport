@@ -77,7 +77,7 @@ export default ({ setRouter }) => {
 	return (
 		<div
 			css={`
-				margin: 1rem;
+				padding: 1rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
