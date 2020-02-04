@@ -87,12 +87,17 @@ export default ({ setRouter }) => {
 					padding: 0;
 				}
 				h1 {
-					font-size: 165%;
+					font-size: 180%;
 					margin: 0.5rem;
 				}
 
+				h1 em {
+					color: purple;
+					font-style: normal;
+				}
+
 				header {
-					margin-bottom: 1rem;
+					margin-bottom: 0.1rem;
 				}
 			`}
 		>
@@ -109,6 +114,9 @@ export default ({ setRouter }) => {
 						<img css="height: 5vh" src={logoEcolab} />
 					</a>
 				</div>
+				<h1>
+					Déplacements <em>écolo</em>
+				</h1>
 			</header>
 			<section
 				css={`
@@ -140,8 +148,8 @@ export default ({ setRouter }) => {
 				`}
 			>
 				<label>
-					<div>Quelle distance&nbsp;?</div>
 					<div css="margin-top: .8rem;">
+						pour
 						<input
 							type="number"
 							max="40000"
@@ -201,12 +209,19 @@ export default ({ setRouter }) => {
 					@media (min-width: 800px) {
 						margin: 2rem;
 					}
-					h2 {
-						margin: 0.6rem 0 0.1rem;
+					h2,
+					small {
+						text-align: center;
 					}
 					small {
-						margin-bottom: 3rem;
+					}
+					h2 {
+						margin: 0.6rem 0 0.1rem;
+						font-size: 140%;
+					}
+					small {
 						font-style: italic;
+						display: inline-block;
 					}
 					ul {
 						margin-left: 2rem;

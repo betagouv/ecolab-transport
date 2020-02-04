@@ -1,16 +1,16 @@
 limite trajet urbain: 80km
 suggestions:
-  - titre: Acheter du pain 🥖
+  - titre: acheter du pain 🥖
     km: 1
-  - titre: Aller au boulot 💼
+  - titre: aller au boulot 💼
     km: 6
-  - titre: Traverser la région
+  - titre: traverser la région
     km: 150
-  - titre: Traverser la France
+  - titre: traverser la France
     km: 900
-  - titre: Voyager en Europe
+  - titre: voyager en Europe
     km: 3000
-  - titre: Voyager dans le monde
+  - titre: voyager dans le monde
     km: 10000
 
 extra-urbains:
