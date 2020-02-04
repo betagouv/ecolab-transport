@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import logoAdeme from './ademe.jpg'
 import logoEcolab from './ecolab.png'
 import modes from './modes.yaml'
-import Covoitureurs from './Covoitureurs'
+import Classement from './Classement'
+import Input from './Input'
 
-const shadowStyle =
-		'box-shadow: 0px 2px 4px -1px rgba(41, 117, 209, 0.2), 0px 4px 5px 0px rgba(41, 117, 209, 0.14), 0px 1px 10px 0px rgba(41, 117, 209, 0.12)',
-	blue = '#7b9fc4'
+import { shadowStyle, blue } from './styles'
 
 export default ({ setRouter }) => {
 	const [distance, setDistance] = useState(10)
@@ -118,165 +117,17 @@ export default ({ setRouter }) => {
 					Déplacements <em>écolo</em>
 				</h1>
 			</header>
-			<section
-				css={`
-					margin: 0 0 0.4rem 0;
-					font-size: 140%;
-
-					label {
-						text-align: center;
-					}
-
-					input {
-						border-radius: 0.3rem;
-						border: 2px solid ${blue};
-						width: 6rem;
-						margin: 0 0.5rem 0 1rem;
-						padding: 0 0.3rem;
-						text-align: right;
-						font-size: inherit;
-						${shadowStyle}
-					}
-					input[type='number']::-webkit-inner-spin-button,
-					input[type='number']::-webkit-outer-spin-button {
-						-webkit-appearance: none;
-					}
-
-					input[type='number'] {
-						-moz-appearance: textfield;
-					}
-				`}
-			>
-				<label>
-					<div css="margin-top: .8rem;">
-						pour
-						<input
-							type="number"
-							max="40000"
-							min="0"
-							value={distance}
-							onChange={({ target: { value } }) => setDistance(value)}
-						/>
-						km
-					</div>
-				</label>
-				<div
-					css={`
-						ul {
-							font-size: 75%;
-							padding: 0.6rem;
-							margin: 0rem;
-						}
-						@media (max-width: 800px) {
-							ul {
-								white-space: nowrap;
-								overflow-x: auto;
-								width: 90vw;
-							}
-						}
-						li {
-							display: inline-block;
-							margin: 0rem 0.4rem;
-						}
-						li a {
-							font-size: 80%;
-							cursor: pointer;
-							padding: 0.1rem 0.3rem;
-						}
-						li a:hover {
-							background: purple;
-							color: white;
-							border-radius: 0.3rem;
-						}
-					`}
-				>
-					<ul>
-						{modes.suggestions.map(({ titre, km }) => (
-							<li key={titre}>
-								<a
-									onClick={() => setDistance(km)}
-									css={distance === km ? `background: yellow;` : ``}
-								>
-									{titre}
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			</section>
-			<section
-				css={`
-					@media (min-width: 800px) {
-						margin: 2rem;
-					}
-					h2,
-					small {
-						text-align: center;
-					}
-					small {
-					}
-					h2 {
-						margin: 0.6rem 0 0.1rem;
-						font-size: 140%;
-					}
-					small {
-						font-style: italic;
-						display: inline-block;
-					}
-					ul {
-						margin-left: 2rem;
-					}
-				`}
-			>
-				<h2>Votre empreinte climat</h2>
-				<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
-				<ul>
-					{classement.map(mode => (
-						<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
-							<div>
-								<span>{capitalizeFirst(mode.titre)}</span>
-
-								{mode.titre.includes('voiture') && (
-									<Covoitureurs
-										voyageurs={options.voyageurs || mode.voyageurs}
-										setVoyageurs={n => setOptions({ ...options, voyageurs: n })}
-									/>
-								)}
-							</div>
-							<div
-								css={`
-									display: flex;
-									align-items: center;
-								`}
-							>
-								<span css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem">
-									{mode.icônes}
-								</span>
-								<span
-									css={`
-										display: inline-block;
-										background: purple;
-										margin-top: 0.2rem;
-										margin-right: 0.8rem;
-										height: 1rem;
-										padding-left: 0.1rem;
-										border-radius: 0.4rem;
-										width: ${(valeur(mode, options) / empreinteMaximum) *
-											100 *
-											0.9}%;
-										color: white;
-										${shadowStyle}
-									`}
-								></span>
-								<span css="color: purple; font-weight: 600; vertical-align: baseline;">
-									{valeurAffichée(valeur(mode, options))}
-								</span>
-							</div>
-						</li>
-					))}
-				</ul>
-			</section>
-
+			<Input {...{ distance, setDistance, modes }} />
+			<Classement
+				{...{
+					classement,
+					options,
+					setOptions,
+					valeurAffichée,
+					valeur,
+					empreinteMaximum
+				}}
+			/>
 			<div>
 				<button onClick={() => setRouter('integration')}>
 					Intégrez ce calculateur sur votre site{' '}
@@ -285,5 +136,3 @@ export default ({ setRouter }) => {
 		</div>
 	)
 }
-const capitalizeFirst = text =>
-	text[0].toUpperCase() + text.slice(1, text.length)
