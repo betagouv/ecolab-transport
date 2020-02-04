@@ -23,7 +23,7 @@ export default ({ setRouter }) => {
 
 			return distance > de && distance <= à
 		},
-		valeur = (m, { voyageurs } = {}) => {
+		facteur = (m, { voyageurs } = {}) => {
 			const parPersonne = m['gCO2e/km/personne']
 
 			if (m.titre.includes('voiture')) {
@@ -62,10 +62,11 @@ export default ({ setRouter }) => {
 			}
 			return parPersonne
 		},
-		classement = modesPertinents.sort((m1, m2) => valeur(m1) - valeur(m2)),
-		empreinteMaximum = valeur(classement[classement.length - 1]),
-		valeurAffichée = valeur => {
-			const résultat = (valeur / 1000) * distance
+		classement = modesPertinents.sort((m1, m2) => facteur(m1) - facteur(m2)),
+		a = console.log('clas', classement),
+		empreinteMaximum = distance * facteur(classement[classement.length - 1]),
+		valeurAffichée = facteur => {
+			const résultat = (facteur / 1000) * distance
 			return résultat === 0
 				? 0
 				: résultat < 10
@@ -124,7 +125,8 @@ export default ({ setRouter }) => {
 					options,
 					setOptions,
 					valeurAffichée,
-					valeur,
+					facteur,
+					distance,
 					empreinteMaximum
 				}}
 			/>
