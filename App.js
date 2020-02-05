@@ -115,7 +115,7 @@ export default ({ setRouter }) => {
 					</a>
 				</div>
 				<h1>
-					Déplacements <em>écolo</em>
+					Votre empreinte <em>climat</em>
 				</h1>
 			</header>
 			<Input {...{ distance, setDistance, modes }} />

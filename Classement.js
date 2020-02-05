@@ -36,8 +36,6 @@ export default ({
 			}
 		`}
 	>
-		<h2>Votre empreinte climat</h2>
-		{console.log('azd', transportClimateBudget, empreinteMaximum)}
 		<div
 			css={`
 				position: relative;
