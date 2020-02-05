@@ -2,6 +2,7 @@ import React from 'react'
 import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
 
+const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
 	climateBudgetPerYear = 2000,
 	climateBudgetPerDay = climateBudgetPerYear / 365,
@@ -43,6 +44,7 @@ export default ({
 		>
 			<span
 				css={`
+				${!showBudget ? 'display: none' : ''}
 				height: 100%;
 				left: 0;
 				z-index: -1;
@@ -116,9 +118,11 @@ export default ({
 				))}
 			</ul>
 		</div>
-		<span css=" background: yellow ;">
-			Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
-		</span>
+		{showBudget && (
+			<span css=" background: yellow ;">
+				Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
+			</span>
+		)}
 	</section>
 )
 const capitalizeFirst = text =>
