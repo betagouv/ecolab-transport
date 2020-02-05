@@ -34,10 +34,6 @@ export default ({
 				margin: 0.6rem 0 0.1rem;
 				font-size: 140%;
 			}
-			small {
-				font-style: italic;
-				display: inline-block;
-			}
 		`}
 	>
 		<h2>Votre empreinte climat</h2>
@@ -62,7 +58,15 @@ export default ({
 					`}
 				key="budget"
 			></span>
-			<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
+			<small
+				css={`
+					display: inline-block;
+					color: purple;
+					font-style: normal;
+				`}
+			>
+				En kilos de gaz à effet de serre (kg CO2e) par personne
+			</small>
 			<ul
 				css={`
 					margin-left: 2rem;
@@ -115,7 +119,7 @@ export default ({
 			</ul>
 		</div>
 		<span css=" background: yellow ;">
-			Budget 1 journée transport {transportClimateBudget.toFixed(1)} kg
+			Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
 		</span>
 	</section>
 )
