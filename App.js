@@ -102,6 +102,9 @@ export default ({ setRouter }) => {
 			`}
 		>
 			<header>
+				<div css="background: purple; margin-left: 1rem; padding: 0 .6rem; font-size: 90%; text-align: center; color: white; border-radius: .6rem; width: 3rem; margin: .6rem auto; font-weight: 900">
+					beta
+				</div>
 				<div
 					css={`
 						display: flex;
