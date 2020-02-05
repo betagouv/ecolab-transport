@@ -52,15 +52,17 @@ export default ({
 				height: 100%;
 				left: 0;
 				z-index: -1;
-				width: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
-				background:	#beffbe;
-				border-radius: .6rem;
+				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
+
+				width: 0px;
+				border-right: 8px dotted yellow;
 		        position: absolute;
+				margin-top: 2rem;
 				}
 					`}
 				key="budget"
 			></span>
-			<span css="font-weight: 800">Budget climat transport</span>
+			<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
 			<ul
 				css={`
 					margin-left: 2rem;
@@ -112,7 +114,9 @@ export default ({
 				))}
 			</ul>
 		</div>
-		<small>En kilos de gaz à effet de serre (kg CO2e) par personne</small>
+		<span css=" background: yellow ;">
+			Budget 1 journée transport {transportClimateBudget.toFixed(1)} kg
+		</span>
 	</section>
 )
 const capitalizeFirst = text =>
