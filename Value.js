@@ -15,7 +15,7 @@ export default ({ facteur, mode, options, distance }) => {
 	)
 	return (
 		<span css="color: purple; font-weight: 600; vertical-align: baseline;">
-			{Math.round(value)}&nbsp;{unit}
+			{value < 10 ? value.toFixed(1) : Math.round(value)}&nbsp;{unit}
 		</span>
 	)
 }
