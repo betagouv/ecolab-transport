@@ -75,6 +75,10 @@ extra-urbains:
     voyageurs: 2.5
     #  - titre: Voiture ⚡ extra-urbaine
     #gCO2e/km/personne: 13
+  - titre: autocar
+    icônes: 🚌
+    gCO2e/km/personne: 58.5
+    source: onglet autres sources
 
 urbains:
   - titre: marche
@@ -89,10 +93,6 @@ urbains:
       0-150 k habitants: 181
       150-250 k habitants: 167
       250-∞ k habitants: 154
-  - titre: autocar
-    icônes: 🚌
-    gCO2e/km/personne: 58.5
-    source: onglet autres sources
   - titre: tram ou trolleybus
     icônes: 🚋
     gCO2e/km/personne: 
