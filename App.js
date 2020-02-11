@@ -79,7 +79,7 @@ export default ({ setRouter }) => {
 					padding: 0;
 				}
 				h1 {
-					font-size: 180%;
+					font-size: 160%;
 					margin: 0.5rem;
 				}
 
