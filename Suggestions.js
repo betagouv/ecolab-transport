@@ -3,6 +3,7 @@ import React from 'react'
 export default ({ modes, distance, setDistance }) => (
 	<div
 		css={`
+			line-height: 2rem;
 			ul {
 				font-size: 75%;
 				padding: 0.6rem;
