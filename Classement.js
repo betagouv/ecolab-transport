@@ -1,6 +1,7 @@
 import React from 'react'
 import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
+import Value from './Value'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -15,7 +16,6 @@ export default ({
 	classement,
 	options,
 	setOptions,
-	valeurAffichée,
 	facteur,
 	distance,
 	empreinteMaximum
@@ -62,10 +62,10 @@ export default ({
 				css={`
 					display: inline-block;
 					color: purple;
-					font-style: normal;
+					font-style: italic;
 				`}
 			>
-				En kilos de gaz à effet de serre (kg CO2e) par personne
+				En équivalent CO2 par personne
 			</small>
 			<ul
 				css={`
@@ -110,9 +110,7 @@ export default ({
 									${shadowStyle}
 								`}
 							></span>
-							<span css="color: purple; font-weight: 600; vertical-align: baseline;">
-								{valeurAffichée(facteur(mode, options))}
-							</span>
+							<Value {...{ mode, facteur, options, distance }} />
 						</div>
 					</li>
 				))}
@@ -127,3 +125,4 @@ export default ({
 )
 const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)
+

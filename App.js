@@ -64,15 +64,7 @@ export default ({ setRouter }) => {
 		},
 		classement = modesPertinents.sort((m1, m2) => facteur(m1) - facteur(m2)),
 		a = console.log('clas', classement),
-		empreinteMaximum = distance * facteur(classement[classement.length - 1]),
-		valeurAffichée = facteur => {
-			const résultat = (facteur / 1000) * distance
-			return résultat === 0
-				? 0
-				: résultat < 10
-				? résultat.toFixed(1)
-				: Math.round(résultat)
-		}
+		empreinteMaximum = distance * facteur(classement[classement.length - 1])
 
 	return (
 		<div
@@ -127,7 +119,6 @@ export default ({ setRouter }) => {
 					classement,
 					options,
 					setOptions,
-					valeurAffichée,
 					facteur,
 					distance,
 					empreinteMaximum
