@@ -70,6 +70,8 @@ export default ({
 			<ul
 				css={`
 					margin-left: 2rem;
+					width: 35rem;
+					max-width: 100%;
 				`}
 			>
 				{classement.map(mode => (
