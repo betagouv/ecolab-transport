@@ -79,10 +79,10 @@ extra-urbains:
 urbains:
   - titre: marche
     icônes: 🚶
-    gCO2e/km/personne: 0 #AFAIRE
-  - titre: vélo ou vélo électrique
+    gCO2e/km/personne: 0 # à préciser
+  - titre: vélo # ou vélo électrique, désactivé pour l'instant en l'attente de données ADEME
     icônes: 🚴
-    gCO2e/km/personne: 0 #AFAIRE
+    gCO2e/km/personne: 0 # à préciser
   - titre: bus thermique
     icônes: 🚌
     gCO2e/km/personne: 

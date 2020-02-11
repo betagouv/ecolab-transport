@@ -22,7 +22,13 @@ export default ({ voyageurs, setVoyageurs }) => {
 					<span>🧑</span>
 				))}
 			</span>
-			<button onClick={() => setVoyageurs(Math.round(voyageurs + 1))}>+</button>
+			<button
+				onClick={() =>
+					voyageurs === 7 ? null : setVoyageurs(Math.round(voyageurs + 1))
+				}
+			>
+				+
+			</button>
 		</span>
 	)
 }
