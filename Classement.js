@@ -3,6 +3,7 @@ import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
 import Propulsion from './Propulsion'
 import Value from './Value'
+import { motion } from 'framer-motion'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -78,7 +79,11 @@ export default ({
 				`}
 			>
 				{classement.map(mode => (
-					<li key={mode.titre} css="margin: .6rem 0; list-style-type: none">
+					<motion.li
+						positionTransition
+						key={mode.titre}
+						css="margin: .6rem 0; list-style-type: none"
+					>
 						<div>
 							<span>{capitalizeFirst(mode.titre)}</span>
 
@@ -126,7 +131,7 @@ export default ({
 							></span>
 							<Value {...{ mode, facteur, options, distance }} />
 						</div>
-					</li>
+					</motion.li>
 				))}
 			</ul>
 		</div>
