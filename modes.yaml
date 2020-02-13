@@ -65,7 +65,7 @@ extra-urbains:
         #      de jour: 978
   - titre: TGV
     icônes: 🚄
-    gCO2e/km/personne: 3.69
+    gCO2e/km/personne: 1.9 # Source : SNCF 2019
     #  - titre: Intercité
     # gCO2e/km/personne: 78
   - titre: voiture thermique
@@ -119,7 +119,7 @@ les deux:
   # - 2 roues ⚡ [personne] Pas encore de donnée
   - titre: RER ou Transilien
     icônes: 🚈
-    gCO2e/km/personne: 5.8
+    gCO2e/km/personne: 4.5 # Source : SNCF 2019
   - titre: TER
     icônes: 🚈
     gCO2e/km/personne:
