@@ -80,7 +80,11 @@ export default ({
 			>
 				{classement.map(mode => (
 					<motion.li
-						positionTransition
+						layoutTransition={{
+							type: 'spring',
+							damping: 100,
+							stiffness: 100
+						}}
 						key={mode.titre}
 						css="margin: .6rem 0; list-style-type: none"
 					>
