@@ -73,7 +73,8 @@ export let IntegrationCode = ({ color = 'purple' }) => (
 			id
 		</em>
 		="ecolab-transport" <em>data-couleur</em>="
-		<span id="scriptColor">{color}</span>" <em>src</em>={src}><span>{'<'}</span>
+		<span id="scriptColor">{color}</span>" <em>src</em>="{src}">
+		<span>{'<'}</span>
 		<span>/</span>
 		<em>script</em>
 		<span>></span>
