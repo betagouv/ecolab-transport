@@ -70,8 +70,10 @@ export default ({
 			<ul
 				css={`
 					margin-left: 2rem;
-					width: 35rem;
-					max-width: 100%;
+
+					@media (min-width: 800px) {
+						width: 35rem;
+					}
 				`}
 			>
 				{classement.map(mode => (
@@ -127,4 +129,3 @@ export default ({
 )
 const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)
-
