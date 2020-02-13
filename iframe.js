@@ -25,14 +25,7 @@ const iframeAttributes = {
 for (var key in iframeAttributes) {
 	iframe.setAttribute(key, iframeAttributes[key])
 }
-iframeResize(
-	{
-		interval: 0,
-		scrolling: 'auto',
-		heightCalculationMethod: 'lowestElement'
-	},
-	iframe
-)
+iframeResize({}, iframe)
 
 script.parentNode.insertBefore(iframe, script)
 
