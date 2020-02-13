@@ -5,8 +5,6 @@ import modes from './modes.yaml'
 import Classement from './Classement'
 import Input from './Input'
 
-import { shadowStyle, blue } from './styles'
-
 export default ({ setRouter }) => {
 	const [distance, setDistance] = useState(10)
 	const [options, setOptions] = useState({})
@@ -62,9 +60,11 @@ export default ({ setRouter }) => {
 			}
 			return parPersonne
 		},
-		classement = modesPertinents.sort((m1, m2) => facteur(m1) - facteur(m2)),
-		a = console.log('clas', classement),
-		empreinteMaximum = distance * facteur(classement[classement.length - 1])
+		classement = modesPertinents.sort(
+			(m1, m2) => facteur(m1, options) - facteur(m2, options)
+		),
+		empreinteMaximum =
+			distance * facteur(classement[classement.length - 1], options)
 
 	return (
 		<div
