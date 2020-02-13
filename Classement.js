@@ -88,14 +88,15 @@ export default ({
 									setVoyageurs={n => setOptions({ ...options, voyageurs: n })}
 								/>
 							)}
-							{mode.titre.includes('TER') && (
-								<Propulsion
-									propulsion={options.propulsion}
-									setPropulsion={propulsion =>
-										setOptions({ ...options, propulsion })
-									}
-								/>
-							)}
+							{false && //Le choix de la propulsion TER est en test
+								mode.titre.includes('TER') && (
+									<Propulsion
+										propulsion={options.propulsion}
+										setPropulsion={propulsion =>
+											setOptions({ ...options, propulsion })
+										}
+									/>
+								)}
 						</div>
 						<div
 							css={`
