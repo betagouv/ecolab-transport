@@ -123,5 +123,7 @@ les deux:
   - titre: TER
     icônes: 🚈
     gCO2e/km/personne:
-      électrique: 8.91
-      diesel: 79.8
+      moyenne: 26.5 # Source : SNCF 2019 
+      électricité: 8.91 # Source : base carbone 
+      diesel: 79.8 # Source : base carbone 
+

@@ -21,7 +21,7 @@ export default ({ setRouter }) => {
 
 			return distance > de && distance <= à
 		},
-		facteur = (m, { voyageurs } = {}) => {
+		facteur = (m, { voyageurs, propulsion } = {}) => {
 			const parPersonne = m['gCO2e/km/personne']
 
 			if (m.titre.includes('voiture')) {
@@ -30,6 +30,7 @@ export default ({ setRouter }) => {
 			}
 
 			if (m.titre === 'TER') {
+				return parPersonne[propulsion || 'moyenne']
 			}
 			if (
 				['bus thermique', 'tram ou trolleybus', 'ferry', 'TER'].includes(

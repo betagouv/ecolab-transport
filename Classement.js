@@ -1,6 +1,7 @@
 import React from 'react'
 import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
+import Propulsion from './Propulsion'
 import Value from './Value'
 
 const showBudget = false
@@ -85,6 +86,14 @@ export default ({
 								<Covoitureurs
 									voyageurs={options.voyageurs || mode.voyageurs}
 									setVoyageurs={n => setOptions({ ...options, voyageurs: n })}
+								/>
+							)}
+							{mode.titre.includes('TER') && (
+								<Propulsion
+									propulsion={options.propulsion}
+									setPropulsion={propulsion =>
+										setOptions({ ...options, propulsion })
+									}
 								/>
 							)}
 						</div>
