@@ -35,7 +35,7 @@ export default ({ setRouter }) => {
 	)
 }
 
-export let IntegrationCode = ({ color = 'purple' }) => (
+export let IntegrationCode = () => (
 	<code
 		css={`
 			display: block;
@@ -61,7 +61,7 @@ export let IntegrationCode = ({ color = 'purple' }) => (
 				border-style: solid;
 				border-color: #e8e8e8 white;
 			}
-			#scriptColor {
+			.attribute {
 				color: #2975d1;
 			}
 		`}
@@ -72,8 +72,8 @@ export let IntegrationCode = ({ color = 'purple' }) => (
 			<br />
 			id
 		</em>
-		="ecolab-transport" <em>data-couleur</em>="
-		<span id="scriptColor">{color}</span>" <em>src</em>="{src}">
+		="ecolab-transport" <em>data-distanceInitiale</em>="
+		<span className="attribute">29</span>" <em>src</em>="{src}">
 		<span>{'<'}</span>
 		<span>/</span>
 		<em>script</em>
