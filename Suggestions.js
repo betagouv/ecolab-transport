@@ -1,6 +1,7 @@
 import React from 'react'
+import suggestions from './suggestions.yaml'
 
-export default ({ modes, distance, setDistance }) => (
+export default ({ distance, setDistance }) => (
 	<div
 		css={`
 			line-height: 2rem;
@@ -33,7 +34,7 @@ export default ({ modes, distance, setDistance }) => (
 		`}
 	>
 		<ul>
-			{modes.suggestions.map(({ titre, km }) => (
+			{suggestions.map(({ titre, km }) => (
 				<li key={titre}>
 					<a
 						onClick={() => setDistance(km)}
