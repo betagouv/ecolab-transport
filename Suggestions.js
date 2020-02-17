@@ -1,5 +1,6 @@
 import React from 'react'
 import suggestions from './suggestions.yaml'
+import Emoji from './Emoji'
 
 export default ({ distance, setDistance }) => (
 	<div
@@ -40,7 +41,7 @@ export default ({ distance, setDistance }) => (
 						onClick={() => setDistance(km)}
 						css={distance === km ? `background: yellow;` : ``}
 					>
-						{titre}
+						<Emoji emoji={titre} />
 					</a>
 				</li>
 			))}

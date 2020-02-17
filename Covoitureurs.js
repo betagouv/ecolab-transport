@@ -1,4 +1,5 @@
 import React from 'react'
+import Emoji from './Emoji'
 
 export default ({ voyageurs, setVoyageurs }) => {
 	return (
@@ -19,7 +20,7 @@ export default ({ voyageurs, setVoyageurs }) => {
 			</button>
 			<span>
 				{[...Array(Math.round(voyageurs))].map(() => (
-					<span>🧑</span>
+					<Emoji emoji="🧑" />
 				))}
 			</span>
 			<button

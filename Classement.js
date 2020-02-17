@@ -4,6 +4,7 @@ import Covoitureurs from './Covoitureurs'
 import Propulsion from './Propulsion'
 import Value from './Value'
 import { motion } from 'framer-motion'
+import Emoji from './Emoji'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -114,7 +115,7 @@ export default ({
 							`}
 						>
 							<span css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem">
-								{mode.icônes}
+								<Emoji emoji={mode.icônes} />
 							</span>
 							<span
 								css={`
