@@ -5,8 +5,11 @@ import modes from './modes.yaml'
 import Classement from './Classement'
 import Input from './Input'
 
+const urlParams = new URLSearchParams(window.location.search)
+const distanceInitiale = urlParams.get('distanceInitiale')
+
 export default ({ setRouter }) => {
-	const [distance, setDistance] = useState(10)
+	const [distance, setDistance] = useState(+distanceInitiale || 10)
 	const [options, setOptions] = useState({})
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
 		modesCommuns = modes['les deux'],

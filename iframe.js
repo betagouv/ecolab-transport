@@ -1,7 +1,7 @@
 import { iframeResize } from 'iframe-resizer'
 
 const script = document.getElementById('ecolab-transport'),
-	couleur = encodeURIComponent(script.dataset.couleur),
+	distanceInitiale = encodeURIComponent(script.dataset.distanceInitiale),
 	integratorUrl = encodeURIComponent(window.location.href.toString()),
 	tmp = document.createElement('a')
 
@@ -10,7 +10,7 @@ const baseUrl =
 		location.hostname === 'localhost'
 			? 'http://localhost:8080/'
 			: 'https://' + tmp.hostname,
-	src = `${baseUrl}?couleur=${couleur}&iframe&integratorUrl=${integratorUrl}`
+	src = `${baseUrl}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
 

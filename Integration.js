@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const src = 'https://ecolab-transport.netlify.com/iframe.js'
+const src = 'http://localhost:8080/iframe.js'
 export default ({ setRouter }) => {
 	useEffect(() => {
 		const script = document.createElement('script')
@@ -8,7 +8,7 @@ export default ({ setRouter }) => {
 		script.src = src
 		script.id = 'ecolab-transport'
 		script.dataset.couleur = 'purple'
-		script.dataset.fromUE = 'yes'
+		script.dataset.distanceInitiale = '29'
 
 		document.querySelector('#app').appendChild(script)
 
