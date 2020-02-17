@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
 	mode: isDevelopment ? 'development' : 'production',
@@ -53,6 +54,7 @@ module.exports = {
 	plugins: [
 		isDevelopment &&
 			new ReactRefreshWebpackPlugin({ disableRefreshCheck: true }),
+		new CopyPlugin(['iframeResizer.contentWindow.min.js']),
 		new HtmlWebpackPlugin({
 			title: 'Ecolab transport',
 			chunks: ['index'],

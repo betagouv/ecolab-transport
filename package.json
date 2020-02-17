@@ -9,6 +9,7 @@
 		"build": "NODE_ENV=production webpack -p -c webpack.config.js"
 	},
 	"dependencies": {
+		"copy-webpack-plugin": "^5.1.1",
 		"framer-motion": "^1.8.4",
 		"iframe-resizer": "^4.2.9",
 		"react": "^16.12.0",
