@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const src = 'http://localhost:8080/iframe.js'
+const src = 'https://ecolab-transport.netlify.com/iframe.js'
 export default ({ setRouter }) => {
 	useEffect(() => {
 		const script = document.createElement('script')
