@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Mode from './Mode'
+import Emoji from './Emoji'
+import { capitalizeFirst } from './Mode'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -17,31 +19,59 @@ export default ({
 	facteur,
 	distance,
 	empreinteMaximum
-}) => (
-	<section
-		css={`
-			@media (min-width: 800px) {
-				margin: 2rem;
-			}
-			h2,
-			small {
-				text-align: center;
-			}
-			small {
-			}
-			h2 {
-				margin: 0.6rem 0 0.1rem;
-				font-size: 140%;
-			}
-		`}
-	>
+}) => {
+	const [details, setDetails] = useState(null)
+	return details ? (
 		<div
 			css={`
-				position: relative;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 1rem;
+				margin: 1rem;
+				min-height: 20rem;
+				background: #f3f2fd;
+				border-radius: 1rem;
+				max-width: 45rem;
+				button {
+					margin: 1rem;
+				}
 			`}
 		>
-			<span
+			<h2>{capitalizeFirst(details.titre)}</h2>
+			{details.note && <p>{details.note}</p>}
+			{details.source && (
+				<>
+					Source :{' '}
+					<a href={details.source} target="_blank">
+						{details.source}
+					</a>
+				</>
+			)}
+			<button onClick={() => setDetails(null)}>Retour</button>
+		</div>
+	) : (
+		<section
+			css={`
+				@media (min-width: 800px) {
+					margin: 2rem;
+				}
+				h2,
+				h2 {
+					margin: 0.6rem 0 0.1rem;
+					font-size: 140%;
+				}
+			`}
+		>
+			<div
 				css={`
+					position: relative;
+				`}
+			>
+				<span
+					css={`
 				${!showBudget ? 'display: none' : ''}
 				height: 100%;
 				left: 0;
@@ -54,45 +84,55 @@ export default ({
 				margin-top: 2rem;
 				}
 					`}
-				key="budget"
-			></span>
-			<ul
-				css={`
-					margin-left: 2rem;
+					key="budget"
+				></span>
+				<ul
+					css={`
+						margin-left: 2rem;
 
-					@media (min-width: 800px) {
-						width: 35rem;
+						@media (min-width: 800px) {
+							width: 35rem;
+						}
+					`}
+				>
+					{classement.map(mode => (
+						<Mode
+							{...{
+								mode,
+								options,
+								distance,
+								facteur,
+								setOptions,
+								empreinteMaximum,
+								setDetails
+							}}
+						/>
+					))}
+				</ul>
+			</div>
+			<small
+				css={`
+					text-align: center;
+					display: inline-block;
+					color: purple;
+					font-style: italic;
+					margin-bottom: 1rem;
+					p {
+						margin: 0.3rem;
 					}
+					margin: 0 auto;
+
+					display: block;
 				`}
 			>
-				{classement.map(mode => (
-					<Mode
-						{...{
-							mode,
-							options,
-							distance,
-							facteur,
-							setOptions,
-							empreinteMaximum
-						}}
-					/>
-				))}
-			</ul>
-		</div>
-		<small
-			css={`
-				display: inline-block;
-				color: purple;
-				font-style: italic;
-				margin-bottom: 1rem;
-			`}
-		>
-			En équivalent CO2 par personne en France.
-		</small>
-		{showBudget && (
-			<span css=" background: yellow ;">
-				Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
-			</span>
-		)}
-	</section>
-)
+				<p>En équivalent CO2 par personne en France. </p>
+				<p>Cliquer sur les barres pour plus d'info.</p>
+			</small>
+			{showBudget && (
+				<span css=" background: yellow ;">
+					Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
+				</span>
+			)}
+		</section>
+	)
+}

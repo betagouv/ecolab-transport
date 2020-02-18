@@ -42,7 +42,7 @@ extra-urbains:
         9000-10000 km: 223
         10000-11000 km: 216
         11000-∞ km: 223
-    note: Sur le lien suivant, filtrer les résultats par l'unité "kgCO2e /passager.km".
+    note: Sur ce lien, filtrer les résultats par l'unité "kgCO2e /passager.km".
     source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion
     
         # Pas de ferry pour l'instant, en attendant d'avoir validé ces données qui semble monstrueusement polluantes
@@ -93,12 +93,12 @@ urbains:
     gCO2e/km/personne: 
       150-250 k habitants: 6.81
       250-∞ k habitants: 6.64
-    note: Sur le lien, filtrer par l'unité "kgCO2e/passager.km".
+    note: Sur ce lien, filtrer par l'unité "kgCO2e/passager.km".
     source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=trolleybus
   - titre: métro
     icônes: 🚇
     gCO2e/km/personne: 5.7
-    note: Sur le lien, filtrer par l'unité "kgCO2e/passager.km".
+    note: Sur ce lien, filtrer par l'unité "kgCO2e/passager.km".
     source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=métro
   - titre: voiture thermique
     icônes: 🚗

@@ -6,7 +6,14 @@ import { motion } from 'framer-motion'
 import Emoji from './Emoji'
 import React from 'react'
 
-export default ({ mode, options, distance, facteur, empreinteMaximum }) => (
+export default ({
+	mode,
+	options,
+	distance,
+	facteur,
+	empreinteMaximum,
+	setDetails
+}) => (
 	<motion.li
 		layoutTransition={{
 			type: 'spring',
@@ -14,7 +21,8 @@ export default ({ mode, options, distance, facteur, empreinteMaximum }) => (
 			stiffness: 100
 		}}
 		key={mode.titre}
-		css="margin: .6rem 0; list-style-type: none"
+		css="margin: .6rem 0; list-style-type: none; cursor: pointer"
+		onClick={() => setDetails(mode)}
 	>
 		<div>
 			<span>{capitalizeFirst(mode.titre)}</span>
@@ -63,5 +71,5 @@ export default ({ mode, options, distance, facteur, empreinteMaximum }) => (
 		</div>
 	</motion.li>
 )
-const capitalizeFirst = text =>
+export const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)
