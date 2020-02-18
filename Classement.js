@@ -43,12 +43,9 @@ export default ({
 			<h2>{capitalizeFirst(details.titre)}</h2>
 			{details.note && <p>{details.note}</p>}
 			{details.source && (
-				<>
-					Source :{' '}
-					<a href={details.source} target="_blank">
-						{details.source}
-					</a>
-				</>
+				<a href={details.source} target="_blank">
+					Source
+				</a>
 			)}
 			<button onClick={() => setDetails(null)}>Retour</button>
 		</div>
