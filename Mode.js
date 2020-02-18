@@ -22,10 +22,11 @@ export default ({
 		}}
 		key={mode.titre}
 		css="margin: .6rem 0; list-style-type: none; cursor: pointer"
-		onClick={() => setDetails(mode)}
 	>
 		<div>
-			<span>{capitalizeFirst(mode.titre)}</span>
+			<span onClick={() => setDetails(mode)}>
+				{capitalizeFirst(mode.titre)}
+			</span>
 
 			{mode.titre.includes('voiture') && (
 				<Covoitureurs
@@ -47,10 +48,14 @@ export default ({
 				align-items: center;
 			`}
 		>
-			<span css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem">
+			<span
+				onClick={() => setDetails(mode)}
+				css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem"
+			>
 				<Emoji emoji={mode.icônes} />
 			</span>
 			<span
+				onClick={() => setDetails(mode)}
 				css={`
 					display: inline-block;
 					background: purple;
