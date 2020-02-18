@@ -2,7 +2,6 @@ import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
 import Propulsion from './Propulsion'
 import Value from './Value'
-import { motion } from 'framer-motion'
 import Emoji from './Emoji'
 import React from 'react'
 
@@ -15,15 +14,7 @@ export default ({
 	empreinteMaximum,
 	setDetails
 }) => (
-	<motion.li
-		layoutTransition={{
-			type: 'spring',
-			damping: 100,
-			stiffness: 100
-		}}
-		key={mode.titre}
-		css="margin: .6rem 0; list-style-type: none; cursor: pointer"
-	>
+	<>
 		<div>
 			<span onClick={() => setDetails(mode)}>
 				{capitalizeFirst(mode.titre)}
@@ -75,7 +66,7 @@ export default ({
 			></span>
 			<Value {...{ mode, facteur, options, distance }} />
 		</div>
-	</motion.li>
+	</>
 )
 export const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)

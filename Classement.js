@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
+import { motion } from 'framer-motion'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -93,18 +94,28 @@ export default ({
 					`}
 				>
 					{classement.map(mode => (
-						<Mode
-							{...{
-								mode,
-								options,
-								setOptions,
-								distance,
-								facteur,
-								setOptions,
-								empreinteMaximum,
-								setDetails
+						<motion.li
+							layoutTransition={{
+								type: 'spring',
+								damping: 100,
+								stiffness: 100
 							}}
-						/>
+							key={mode.titre}
+							css="margin: .6rem 0; list-style-type: none; cursor: pointer"
+						>
+							<Mode
+								{...{
+									mode,
+									options,
+									setOptions,
+									distance,
+									facteur,
+									setOptions,
+									empreinteMaximum,
+									setDetails
+								}}
+							/>
+						</motion.li>
 					))}
 				</ul>
 			</div>
