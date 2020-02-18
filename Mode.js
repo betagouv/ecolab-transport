@@ -2,30 +2,23 @@ import { shadowStyle } from './styles'
 import Covoitureurs from './Covoitureurs'
 import Propulsion from './Propulsion'
 import Value from './Value'
-import { motion } from 'framer-motion'
 import Emoji from './Emoji'
 import React from 'react'
 
 export default ({
 	mode,
 	options,
+	setOptions,
 	distance,
 	facteur,
 	empreinteMaximum,
 	setDetails
 }) => (
-	<motion.li
-		layoutTransition={{
-			type: 'spring',
-			damping: 100,
-			stiffness: 100
-		}}
-		key={mode.titre}
-		css="margin: .6rem 0; list-style-type: none; cursor: pointer"
-		onClick={() => setDetails(mode)}
-	>
+	<>
 		<div>
-			<span>{capitalizeFirst(mode.titre)}</span>
+			<span onClick={() => setDetails(mode)}>
+				{capitalizeFirst(mode.titre)}
+			</span>
 
 			{mode.titre.includes('voiture') && (
 				<Covoitureurs
@@ -47,10 +40,14 @@ export default ({
 				align-items: center;
 			`}
 		>
-			<span css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem">
+			<span
+				onClick={() => setDetails(mode)}
+				css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem"
+			>
 				<Emoji emoji={mode.icônes} />
 			</span>
 			<span
+				onClick={() => setDetails(mode)}
 				css={`
 					display: inline-block;
 					background: purple;
@@ -69,7 +66,7 @@ export default ({
 			></span>
 			<Value {...{ mode, facteur, options, distance }} />
 		</div>
-	</motion.li>
+	</>
 )
 export const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Mode from './Mode'
-import Emoji from './Emoji'
 import { capitalizeFirst } from './Mode'
+import { motion } from 'framer-motion'
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -34,7 +34,8 @@ export default ({
 				min-height: 20rem;
 				background: #f3f2fd;
 				border-radius: 1rem;
-				max-width: 45rem;
+				max-width: 80%;
+				width: 40rem;
 				button {
 					margin: 1rem;
 				}
@@ -43,12 +44,9 @@ export default ({
 			<h2>{capitalizeFirst(details.titre)}</h2>
 			{details.note && <p>{details.note}</p>}
 			{details.source && (
-				<>
-					Source :{' '}
-					<a href={details.source} target="_blank">
-						{details.source}
-					</a>
-				</>
+				<a href={details.source} target="_blank">
+					Source
+				</a>
 			)}
 			<button onClick={() => setDetails(null)}>Retour</button>
 		</div>
@@ -96,17 +94,28 @@ export default ({
 					`}
 				>
 					{classement.map(mode => (
-						<Mode
-							{...{
-								mode,
-								options,
-								distance,
-								facteur,
-								setOptions,
-								empreinteMaximum,
-								setDetails
+						<motion.li
+							layoutTransition={{
+								type: 'spring',
+								damping: 100,
+								stiffness: 100
 							}}
-						/>
+							key={mode.titre}
+							css="margin: .6rem 0; list-style-type: none; cursor: pointer"
+						>
+							<Mode
+								{...{
+									mode,
+									options,
+									setOptions,
+									distance,
+									facteur,
+									setOptions,
+									empreinteMaximum,
+									setDetails
+								}}
+							/>
+						</motion.li>
 					))}
 				</ul>
 			</div>
@@ -126,7 +135,7 @@ export default ({
 				`}
 			>
 				<p>En équivalent CO2 par personne en France. </p>
-				<p>Cliquer sur les barres pour plus d'info.</p>
+				<p>Cliquer sur les modes pour plus d'info.</p>
 			</small>
 			{showBudget && (
 				<span css=" background: yellow ;">
