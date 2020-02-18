@@ -121,9 +121,9 @@ export default ({
 								css={`
 									display: inline-block;
 									background: purple;
-									margin-top: 0.2rem;
+									margin-top: 0rem;
 									margin-right: 0.8rem;
-									height: 1rem;
+									height: 1.1rem;
 									padding-left: 0.1rem;
 									border-radius: 0.4rem;
 									width: ${((distance * facteur(mode, options)) /
