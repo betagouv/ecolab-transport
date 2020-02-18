@@ -127,7 +127,7 @@ export default ({
 				`}
 			>
 				<p>En équivalent CO2 par personne en France. </p>
-				<p>Cliquer sur les barres pour plus d'info.</p>
+				<p>Cliquer sur les modes pour plus d'info.</p>
 			</small>
 			{showBudget && (
 				<span css=" background: yellow ;">
