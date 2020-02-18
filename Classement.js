@@ -68,7 +68,7 @@ export default ({
 					font-style: italic;
 				`}
 			>
-				En équivalent CO2 par personne
+				En équivalent CO2 par personne en France
 			</small>
 			<ul
 				css={`
