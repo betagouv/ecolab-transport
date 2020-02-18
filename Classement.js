@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Mode from './Mode'
-import Emoji from './Emoji'
 import { capitalizeFirst } from './Mode'
 
 const showBudget = false
@@ -101,6 +100,7 @@ export default ({
 							{...{
 								mode,
 								options,
+								setOptions,
 								distance,
 								facteur,
 								setOptions,

@@ -9,6 +9,7 @@ import React from 'react'
 export default ({
 	mode,
 	options,
+	setOptions,
 	distance,
 	facteur,
 	empreinteMaximum,
