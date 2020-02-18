@@ -42,6 +42,8 @@ extra-urbains:
         9000-10000 km: 223
         10000-11000 km: 216
         11000-∞ km: 223
+    note: Sur le lien suivant, filtrer les résultats par l'unité "kgCO2e /passager.km".
+    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion
     
         # Pas de ferry pour l'instant, en attendant d'avoir validé ces données qui semble monstrueusement polluantes
         # - titre: ferry
@@ -51,47 +53,58 @@ extra-urbains:
         #      de jour: 978
   - titre: TGV
     icônes: 🚄
-    gCO2e/km/personne: 1.9 # Source : SNCF 2019
+    gCO2e/km/personne: 1.9
+    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
     #  - titre: Intercité
     # gCO2e/km/personne: 78
+    # source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
   - titre: voiture thermique
     icônes: 🚗
     gCO2e/km/personne: 69.5
-    source: onglet autres sources
     voyageurs: 2.5
+    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 1 passager/voiture
     #  - titre: Voiture ⚡ extra-urbaine
     #gCO2e/km/personne: 13
   - titre: autocar
     icônes: 🚌
     gCO2e/km/personne: 58.5
-    source: onglet autres sources
+    note: Deloitte pour l’ADEME « Étude sur les efficacités énergétiques et environnementales des modes de transports » 2008 (données 2005).
+    source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
 
 urbains:
   - titre: marche
     icônes: 🚶
     gCO2e/km/personne: 0 # à préciser
+    note: L'impact du vélo est ici considéré comme négligeable.
   - titre: vélo # ou vélo électrique, désactivé pour l'instant en l'attente de données ADEME
     icônes: 🚴
     gCO2e/km/personne: 0 # à préciser
+    note: L'impact du vélo est ici considéré comme négligeable.
   - titre: bus thermique
     icônes: 🚌
     gCO2e/km/personne: 
       0-150 k habitants: 181
       150-250 k habitants: 167
       250-∞ k habitants: 154
+    note: Sur ce lien, filtrer par l'unité "kgCO2e/passager.km". Notons que les bus ne transportent en moyenne pas plus de 10 personnes. Prendre le bus, c'est augmenter les taux de remplissage et donc améliorer le bilan de ce moyen de transport !
+    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
   - titre: tram ou trolleybus
     icônes: 🚋
     gCO2e/km/personne: 
       150-250 k habitants: 6.81
       250-∞ k habitants: 6.64
+    note: Sur le lien, filtrer par l'unité "kgCO2e/passager.km".
+    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=trolleybus
   - titre: métro
     icônes: 🚇
     gCO2e/km/personne: 5.7
+    note: Sur le lien, filtrer par l'unité "kgCO2e/passager.km".
+    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=métro
   - titre: voiture thermique
     icônes: 🚗
     gCO2e/km/personne: 231.7 
     voyageurs: 1
-    source: onglet autres sources
+    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 2,5 passagers/voiture
     #  - titre: Voiture ⚡ urbaine
     #gCO2e/km/personne: 276
 
@@ -101,15 +114,21 @@ les deux:
   - titre: deux roues thermique
     icônes: 🛵
     gCO2e/km/personne: 110.7
-    source: onglet autres sources
-  # - 2 roues ⚡ [personne] Pas encore de donnée
+    note: Deloitte pour l’ADEME « Étude sur les efficacités énergétiques et environnementales des modes de transports » 2008 (données 2005). Page 10, second graphique, barre jaune "deux-roues".
+    source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
+  # - 2 roues ⚡
+  # Pas encore de donnée
   - titre: RER ou Transilien
     icônes: 🚈
     gCO2e/km/personne: 4.5 # Source : SNCF 2019
+    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
   - titre: TER
     icônes: 🚈
     gCO2e/km/personne:
       moyenne: 26.5 # Source : SNCF 2019 
       électricité: 8.91 # Source : base carbone 
       diesel: 79.8 # Source : base carbone 
+    note: | 
+      L'impact du TER dépend de sa motorisation : électrique, dans la grande majorité des cas, ou diesel, souvent sur les petites lignes, car électrifier une ligne coûte cher.
+    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
 
