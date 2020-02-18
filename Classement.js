@@ -34,7 +34,8 @@ export default ({
 				min-height: 20rem;
 				background: #f3f2fd;
 				border-radius: 1rem;
-				max-width: 45rem;
+				max-width: 80%;
+				width: 40rem;
 				button {
 					margin: 1rem;
 				}
