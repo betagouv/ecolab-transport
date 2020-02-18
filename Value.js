@@ -11,7 +11,7 @@ const humanWeightUnit = v =>
 
 export default ({ facteur, mode, options, distance }) => {
 	const [value, unit] = humanWeightUnit(
-		distance * (facteur(mode, options) / 1000)
+		distance * (facteur(distance, mode, options) / 1000)
 	)
 	return (
 		<span css="color: purple; font-weight: 600; vertical-align: baseline;">

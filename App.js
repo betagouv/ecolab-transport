@@ -4,6 +4,7 @@ import logoEcolab from './ecolab.png'
 import modes from './modes.yaml'
 import Classement from './Classement'
 import Input from './Input'
+import facteur from './calcul'
 
 const urlParams = new URLSearchParams(window.location.search)
 const distanceInitiale = urlParams.get('distanceInitiale')
@@ -17,58 +18,12 @@ export default ({ setRouter }) => {
 			distance > limiteUrbain
 				? [...modes['extra-urbains'], ...modesCommuns]
 				: [...modes['urbains'], ...modesCommuns],
-		dansIntervalle = (intervalle, unité) => {
-			const de = +intervalle.split('-')[0],
-				àRaw = intervalle.split('-')[1].split(' ' + unité)[0],
-				à = àRaw === '∞' ? Infinity : +àRaw
-
-			return distance > de && distance <= à
-		},
-		facteur = (m, { voyageurs, propulsion } = {}) => {
-			const parPersonne = m['gCO2e/km/personne']
-
-			if (m.titre.includes('voiture')) {
-				const parVoiture = m.voyageurs * parPersonne
-				return parVoiture / (voyageurs || m.voyageurs)
-			}
-
-			if (m.titre === 'TER') {
-				return parPersonne[propulsion || 'moyenne']
-			}
-			if (
-				['bus thermique', 'tram ou trolleybus', 'ferry', 'TER'].includes(
-					m.titre
-				)
-			) {
-				/* Once the inhabitants and other variables are known :
-				return Object.entries(parPersonne).find(
-					([intervalle]) => dansIntervalle
-				)[1]
-
-				*/
-				const valeurs = Object.values(parPersonne)
-				return valeurs.reduce((memo, next) => memo + next, 0) / valeurs.length
-			}
-			if (m.titre === 'avion') {
-				let chiffresPertinents = Object.values(parPersonne)
-					.map(intervalles =>
-						Object.entries(intervalles).find(([intervalle]) =>
-							dansIntervalle(intervalle, 'km')
-						)
-					)
-					.filter(Boolean)
-				return (
-					chiffresPertinents.reduce((memo, [, next]) => memo + next, 0) /
-					chiffresPertinents.length
-				)
-			}
-			return parPersonne
-		},
 		classement = modesPertinents.sort(
-			(m1, m2) => facteur(m1, options) - facteur(m2, options)
+			(m1, m2) =>
+				facteur(distance, m1, options) - facteur(distance, m2, options)
 		),
 		empreinteMaximum =
-			distance * facteur(classement[classement.length - 1], options)
+			distance * facteur(distance, classement[classement.length - 1], options)
 
 	return (
 		<div

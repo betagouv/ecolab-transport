@@ -126,7 +126,7 @@ export default ({
 									height: 1.1rem;
 									padding-left: 0.1rem;
 									border-radius: 0.4rem;
-									width: ${((distance * facteur(mode, options)) /
+									width: ${((distance * facteur(distance, mode, options)) /
 										empreinteMaximum) *
 										100 *
 										0.9}%;
