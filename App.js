@@ -40,6 +40,7 @@ export default ({ setRouter }) => {
 				h1 {
 					font-size: 160%;
 					margin: 0.5rem;
+					text-align: center;
 				}
 
 				h1 em {
@@ -53,8 +54,13 @@ export default ({ setRouter }) => {
 			`}
 		>
 			<header>
-				<div css="background: purple; margin-left: 1rem; padding: 0 .6rem; font-size: 90%; text-align: center; color: white; border-radius: .6rem; width: 3rem; margin: .6rem auto; font-weight: 900">
-					beta
+				<div css="max-width: 30rem; text-align: center">
+					Ce calculateur est une
+					<span css="display: inline-block; width: 6rem;background: purple; padding: 0 .2rem; font-size: 90%; text-align: center; color: white; border-radius: .6rem; margin: 0 .3rem; font-weight: 900">
+						version test
+					</span>
+					<br />
+					Une question, une suggestion ? Faites nous part de vos retours !
 				</div>
 				<div
 					css={`
