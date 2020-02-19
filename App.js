@@ -63,7 +63,7 @@ export default ({ setRouter }) => {
 						align-items: center;
 					`}
 				>
-					<img css="height: 6vh" src={logoAdeme} />
+					{false && <img css="height: 6vh" src={logoAdeme} />}
 					<a href="https://ecolab.ademe.fr">
 						<img css="height: 5vh" src={logoEcolab} />
 					</a>
