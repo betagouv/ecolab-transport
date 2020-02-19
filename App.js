@@ -62,7 +62,7 @@ export default ({ setRouter }) => {
 					<br />
 					Une question, une suggestion ?{' '}
 					<a href="https://airtable.com/shr0MkHMKnpkWil7F">
-						Faites nous part de vos retours !
+						Faites-nous part de vos retours !
 					</a>
 				</div>
 				<div
