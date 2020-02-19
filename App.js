@@ -60,7 +60,10 @@ export default ({ setRouter }) => {
 						version test
 					</span>
 					<br />
-					Une question, une suggestion ? Faites nous part de vos retours !
+					Une question, une suggestion ?{' '}
+					<a href="https://airtable.com/shr0MkHMKnpkWil7F">
+						Faites nous part de vos retours !
+					</a>
 				</div>
 				<div
 					css={`
