@@ -3,7 +3,7 @@ import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
 import { motion } from 'framer-motion'
 
-const showBudget = false
+const showBudget = true
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
 	climateBudgetPerYear = 2000,
 	climateBudgetPerDay = climateBudgetPerYear / 365,
