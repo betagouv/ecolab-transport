@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
 import { motion } from 'framer-motion'
+import Emoji from './Emoji'
 
 const showBudget = true
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -144,15 +145,11 @@ const Legende = () => (
 			color: purple;
 			font-style: italic;
 			margin-bottom: 1rem;
-			p {
-				margin: 0.3rem;
-			}
 			margin: 0 auto;
-
 			display: block;
 		`}
 	>
-		<p>En équivalent CO2 par personne en France. </p>
-		<p>Cliquer sur les modes pour plus d'info.</p>
+		En équivalent CO2 par personne en France. <Emoji emoji="👆" /> Cliquer sur
+		les barres pour plus d'info.
 	</small>
 )
