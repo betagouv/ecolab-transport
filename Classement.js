@@ -104,29 +104,55 @@ export default ({
 					))}
 				</ul>
 			</div>
-			<small
-				css={`
-					text-align: center;
-					display: inline-block;
-					color: purple;
-					font-style: italic;
-					margin-bottom: 1rem;
-					p {
-						margin: 0.3rem;
-					}
-					margin: 0 auto;
-
-					display: block;
-				`}
-			>
-				<p>En équivalent CO2 par personne en France. </p>
-				<p>Cliquer sur les modes pour plus d'info.</p>
-			</small>
 			{showBudget && (
-				<span css=" background: yellow ;">
-					Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
-				</span>
+				<>
+					<p>
+						Pour rester sous les 2 degrés de réchauffement (accord de Paris) :
+					</p>
+					<ol css="list-style-type: none">
+						{[
+							['purple', 'soutenable sur une journée'],
+							['red', 'non soutenable sur une journée']
+						].map(([color, text]) => (
+							<li key={color}>
+								<span
+									css={`
+										vertical-align: middle;
+										margin-right: 1rem;
+										display: inline-block;
+										border: 1px solid black;
+										width: 1rem;
+										height: 1rem;
+										background: ${color};
+									`}
+								></span>
+								{text}
+							</li>
+						))}
+					</ol>
+				</>
 			)}
+			<Legende />
 		</section>
 	)
 }
+
+const Legende = () => (
+	<small
+		css={`
+			display: inline-block;
+			color: purple;
+			font-style: italic;
+			margin-bottom: 1rem;
+			p {
+				margin: 0.3rem;
+			}
+			margin: 0 auto;
+
+			display: block;
+		`}
+	>
+		<p>En équivalent CO2 par personne en France. </p>
+		<p>Cliquer sur les modes pour plus d'info.</p>
+	</small>
+)
