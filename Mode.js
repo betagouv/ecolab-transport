@@ -4,6 +4,7 @@ import Propulsion from './Propulsion'
 import Value from './Value'
 import Emoji from './Emoji'
 import React from 'react'
+import { transportClimateBudget, limits } from './limits.js'
 
 export default ({
 	mode,
@@ -12,8 +13,7 @@ export default ({
 	distance,
 	facteur,
 	empreinteMaximum,
-	setDetails,
-	transportClimateBudget
+	setDetails
 }) => (
 	<>
 		<div>
@@ -55,8 +55,7 @@ export default ({
 					mode,
 					options,
 					empreinteMaximum,
-					shadowStyle,
-					transportClimateBudget
+					shadowStyle
 				}}
 			/>
 			<Value {...{ mode, facteur, options, distance }} />
@@ -73,8 +72,7 @@ const Bars = ({
 	mode,
 	options,
 	empreinteMaximum,
-	shadowStyle,
-	transportClimateBudget
+	shadowStyle
 }) => {
 	const calculateWidth = gCO2 => (gCO2 / empreinteMaximum) * 100 * 0.8 // 0.8 to give enough space for the figure in CO2e, else its variability makes the width of the bar change for the same value
 	const width = calculateWidth(distance * facteur(distance, mode, options)),

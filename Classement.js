@@ -3,15 +3,9 @@ import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
 import { motion } from 'framer-motion'
 import Emoji from './Emoji'
+import { transportClimateBudget, limits } from './limits.js'
 
 const showBudget = true
-const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
-	climateBudgetPerYear = 2000,
-	climateBudgetPerDay = climateBudgetPerYear / 365,
-	// Based on current share of the annual mean of 12 ton per french
-	// Source : http://ravijen.fr/?p=440
-	transportShare = 1 / 4,
-	transportClimateBudget = climateBudgetPerDay * transportShare
 
 export default ({
 	classement,
@@ -97,8 +91,7 @@ export default ({
 									facteur,
 									setOptions,
 									empreinteMaximum,
-									setDetails,
-									transportClimateBudget
+									setDetails
 								}}
 							/>
 						</motion.li>
@@ -111,10 +104,7 @@ export default ({
 						Pour rester sous les 2 degrés de réchauffement (accord de Paris) :
 					</p>
 					<ol css="list-style-type: none">
-						{[
-							['purple', 'soutenable sur une journée'],
-							['red', 'non soutenable sur une journée']
-						].map(([color, text]) => (
+						{limits.map(([color, , text]) => (
 							<li key={color}>
 								<span
 									css={`
