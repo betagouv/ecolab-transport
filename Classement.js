@@ -68,22 +68,6 @@ export default ({
 					position: relative;
 				`}
 			>
-				<span
-					css={`
-				${!showBudget ? 'display: none' : ''}
-				height: 100%;
-				left: 0;
-				z-index: -1;
-				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
-
-				width: 0px;
-				border-right: 8px dotted yellow;
-		        position: absolute;
-				margin-top: 2rem;
-				}
-					`}
-					key="budget"
-				></span>
 				<ul
 					css={`
 						margin-left: 2rem;
@@ -112,7 +96,8 @@ export default ({
 									facteur,
 									setOptions,
 									empreinteMaximum,
-									setDetails
+									setDetails,
+									transportClimateBudget
 								}}
 							/>
 						</motion.li>
