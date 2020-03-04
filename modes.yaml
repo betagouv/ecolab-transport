@@ -104,7 +104,7 @@ urbains:
   - titre: voiture thermique
     icônes: 🚗
     gCO2e/km/personne: 177 
-    voyageurs: 1,2
+    voyageurs: 1.2
     note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 1,2 passagers/voiture
     #  - titre: Voiture ⚡ urbaine
     #gCO2e/km/personne: 276
