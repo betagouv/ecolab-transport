@@ -55,21 +55,22 @@ extra-urbains:
     icônes: 🚄
     gCO2e/km/personne: 1.9
     source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
-    #  - titre: Intercité
-    # gCO2e/km/personne: 78
-    # source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+  - titre: Trains grandes lignes
+    icônes: 🚈
+    gCO2e/km/personne: 5,7
+    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
   - titre: voiture thermique
     icônes: 🚗
-    gCO2e/km/personne: 69.5
-    voyageurs: 2.5
-    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 1 passager/voiture
+    gCO2e/km/personne: 72,4
+    voyageurs: 2.4
+    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 2,4 passagers/voiture
     #  - titre: Voiture ⚡ extra-urbaine
     #gCO2e/km/personne: 13
   - titre: autocar
     icônes: 🚌
-    gCO2e/km/personne: 58.5
-    note: Deloitte pour l’ADEME « Étude sur les efficacités énergétiques et environnementales des modes de transports » 2008 (données 2005).
-    source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
+    gCO2e/km/personne: 30
+    note: Calculs ADEME à partir d'HBEFA (2020)
+    #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
 
 urbains:
   - titre: marche
@@ -83,11 +84,11 @@ urbains:
   - titre: bus thermique
     icônes: 🚌
     gCO2e/km/personne: 
-      0-150 k habitants: 181
-      150-250 k habitants: 167
-      250-∞ k habitants: 154
-    note: Sur ce lien, filtrer par l'unité "kgCO2e/passager.km". Notons que les bus ne transportent en moyenne pas plus de 10 personnes. Prendre le bus, c'est augmenter les taux de remplissage et donc améliorer le bilan de ce moyen de transport !
-    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
+      0-150 k habitants: 103
+      150-250 k habitants: 103
+      250-∞ k habitants: 103
+    note: Calculs ADEME à partir d'HBEFA (2020). Notons que les bus ne transportent en moyenne pas plus de 10 personnes. Prendre le bus, c'est augmenter les taux de remplissage et donc améliorer le bilan de ce moyen de transport !
+    #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
   - titre: tram ou trolleybus
     icônes: 🚋
     gCO2e/km/personne: 
@@ -102,9 +103,9 @@ urbains:
     source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=métro
   - titre: voiture thermique
     icônes: 🚗
-    gCO2e/km/personne: 231.7 
-    voyageurs: 1
-    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 2,5 passagers/voiture
+    gCO2e/km/personne: 177 
+    voyageurs: 1,2
+    note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 1,2 passagers/voiture
     #  - titre: Voiture ⚡ urbaine
     #gCO2e/km/personne: 276
 
@@ -114,8 +115,8 @@ les deux:
   - titre: deux roues thermique
     icônes: 🛵
     gCO2e/km/personne: 110.7
-    note: Deloitte pour l’ADEME « Étude sur les efficacités énergétiques et environnementales des modes de transports » 2008 (données 2005). Page 10, second graphique, barre jaune "deux-roues".
-    source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
+    note: Calculs ADEME à partir d'HBEFA (2020)
+    #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
   # - 2 roues ⚡
   # Pas encore de donnée
   - titre: RER ou Transilien
