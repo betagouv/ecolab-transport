@@ -57,11 +57,11 @@ extra-urbains:
     source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
   - titre: Trains grandes lignes
     icônes: 🚈
-    gCO2e/km/personne: 5,7
+    gCO2e/km/personne: 5.7
     source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
   - titre: voiture thermique
     icônes: 🚗
-    gCO2e/km/personne: 72,4
+    gCO2e/km/personne: 72.4
     voyageurs: 2.4
     note: Calculs ADEME, base Comptes des transports CGDD (2019) ; hypothèse 2,4 passagers/voiture
     #  - titre: Voiture ⚡ extra-urbaine
