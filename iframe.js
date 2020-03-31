@@ -6,11 +6,7 @@ const script = document.getElementById('ecolab-transport'),
 	tmp = document.createElement('a')
 
 tmp.href = script.src
-const baseUrl =
-		location.hostname === 'localhost'
-			? 'http://localhost:8080/'
-			: 'https://' + tmp.hostname,
-	src = `${baseUrl}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
+const src = `https://${tmp.hostname}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
 
