@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logoAdeme from './ademe.jpg'
 import logoEcolab from './ecolab.png'
-import modes from './modes.yaml'
+import modes from './ges-transport.yaml'
 import Classement from './Classement'
 import Input from './Input'
 import facteur from './calcul'

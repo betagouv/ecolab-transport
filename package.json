@@ -6,7 +6,9 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "webpack-dev-server --hot --mode development",
-		"build": "NODE_ENV=production webpack -p -c webpack.config.js"
+		"build-web": "NODE_ENV=production webpack -p -c webpack.config.js",
+		"build-data": "node yamlToJson.js",
+		"build": "npm run build-web && npm run build-data"
 	},
 	"dependencies": {
 		"copy-webpack-plugin": "^5.1.1",
@@ -15,7 +17,8 @@
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
 		"styled-components": "^5.0.0",
-		"twemoji": "^12.1.5"
+		"twemoji": "^12.1.5",
+		"yaml": "^1.8.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.7.7",

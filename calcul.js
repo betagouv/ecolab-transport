@@ -1,4 +1,4 @@
-// Calcul du facteur d'émission d'un mode de transport du fichier modes.yaml
+// Calcul du facteur d'émission d'un mode de transport du fichier ges-transport.yaml
 export default (distance, m, { voyageurs, propulsion } = {}) => {
 	const parPersonne = m['gCO2e/km/personne']
 
