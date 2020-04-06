@@ -4,12 +4,11 @@ import logoEcolab from './ecolab.png'
 import Calculateur from './Calculateur'
 
 export default () => {
-	const path = window.location.pathname
+	const path = decodeURI(window.location.pathname)
 
 	if (path === '/') return <Home />
 	if (path === '/calculateur') return <Calculateur />
-	if (path === '/calculateur-inversé')
-		return <div>Calculateur inversé à venir</div>
+	if (path === '/inversé') return <div>Calculateur inversé à venir</div>
 
 	return <div>404, chemin inconnu : {path}</div>
 }
@@ -47,7 +46,7 @@ const Home = () => (
 				</a>
 			</li>
 			<li>
-				<a href="/calculateur-inversé">
+				<a href="/inversé">
 					Combien de km parcourir en vélo, voiture, avion...
 				</a>
 			</li>
