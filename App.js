@@ -2,13 +2,14 @@ import React from 'react'
 import logoAdeme from './ademe.jpg'
 import logoEcolab from './ecolab.png'
 import Calculateur from './Calculateur'
+import CalculateurInversé from './CalculateurInversé'
 
 export default () => {
 	const path = decodeURI(window.location.pathname)
 
 	if (path === '/') return <Home />
 	if (path === '/calculateur') return <Calculateur />
-	if (path === '/inversé') return <div>Calculateur inversé à venir</div>
+	if (path === '/calculateurInversé') return  <CalculateurInversé />
 
 	return <div>404, chemin inconnu : {path}</div>
 }
@@ -46,7 +47,7 @@ const Home = () => (
 				</a>
 			</li>
 			<li>
-				<a href="/inversé">
+				<a href="/calculateurInversé">
 					Combien de km parcourir en vélo, voiture, avion...
 				</a>
 			</li>
