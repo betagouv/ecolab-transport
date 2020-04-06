@@ -1,7 +1,6 @@
 {
-	"name": "recherche-fuzzy",
+	"name": "ecolab-transport",
 	"version": "0.0.1",
-	"description": "",
 	"main": "index.html",
 	"license": "MIT",
 	"scripts": {
