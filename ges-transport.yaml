@@ -91,7 +91,7 @@ urbains:
       250-∞ k habitants: 103
     note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020). Notons que les bus ne transportent en moyenne pas plus de 10 personnes. Prendre le bus, c'est augmenter les taux de remplissage et donc améliorer le bilan de ce moyen de transport !
     #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
-  - titre: tramway ou trolleybus
+  - titre: tram ou trolleybus
     icônes: 🚋
     gCO2e/km/personne: 
       150-250 k habitants: 6.81
