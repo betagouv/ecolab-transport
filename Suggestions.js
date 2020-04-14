@@ -5,14 +5,22 @@ import Emoji from './Emoji'
 export default ({ distance, setDistance }) => (
 	<div
 		css={`
-			line-height: 2rem;
+			margin-top: 1rem;
 			ul {
+				display: flex;
+				justify-content: center;
+				justify-items: center;
+				flex-wrap: wrap;
 				font-size: 75%;
 				padding: 0.6rem;
 				margin: 0rem;
 			}
 			@media (max-width: 800px) {
 				ul {
+					display: flex;
+					justify-content: center;
+					justify-items: center;
+					flex-wrap: wrap;
 					white-space: nowrap;
 					overflow-x: auto;
 					width: 90vw;
