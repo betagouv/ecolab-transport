@@ -4,6 +4,7 @@ import Propulsion from './Propulsion'
 import Value from './Value'
 import Emoji from './Emoji'
 import React from 'react'
+import { transportClimateBudget, limits } from './limits.js'
 
 export default ({
 	mode,
@@ -46,27 +47,89 @@ export default ({
 			>
 				<Emoji emoji={mode.icônes} />
 			</span>
-			<span
-				onClick={() => setDetails(mode)}
-				css={`
-					display: inline-block;
-					background: purple;
-					margin-top: 0rem;
-					margin-right: 0.8rem;
-					height: 1.1rem;
-					padding-left: 0.1rem;
-					border-radius: 0.4rem;
-					width: ${((distance * facteur(distance, mode, options)) /
-						empreinteMaximum) *
-						100 *
-						0.9}%;
-					color: white;
-					${shadowStyle}
-				`}
-			></span>
+			<Bars
+				{...{
+					onClick: () => setDetails(mode),
+					distance,
+					facteur,
+					mode,
+					options,
+					empreinteMaximum,
+					shadowStyle
+				}}
+			/>
 			<Value {...{ mode, facteur, options, distance }} />
 		</div>
 	</>
 )
 export const capitalizeFirst = text =>
 	text[0].toUpperCase() + text.slice(1, text.length)
+
+const Bars = ({
+	onClick,
+	distance,
+	facteur,
+	mode,
+	options,
+	empreinteMaximum,
+	shadowStyle
+}) => {
+	const calculateWidth = gCO2 => (gCO2 / empreinteMaximum) * 100 * 0.8 // 0.8 to give enough space for the figure in CO2e, else its variability makes the width of the bar change for the same value
+	const width = calculateWidth(distance * facteur(distance, mode, options)),
+		limitWidth = calculateWidth(transportClimateBudget * 1000),
+		aboveLimit = width > limitWidth
+
+	return (
+		<>
+			<Bar
+				{...{
+					onClick,
+					shadowStyle,
+					width: aboveLimit ? limitWidth : width,
+					style: aboveLimit ? 'left' : 'whole'
+				}}
+			/>
+			{aboveLimit && (
+				<Bar
+					{...{
+						onClick,
+						shadowStyle,
+						width: width - limitWidth,
+						style: 'right'
+					}}
+				/>
+			)}
+		</>
+	)
+}
+
+const Bar = ({ onClick, shadowStyle, width, style }) => (
+	<span
+		onClick={onClick}
+		css={`
+			display: inline-block;
+			background: purple;
+			margin-top: 0rem;
+			height: 1.1rem;
+			padding-left: 0.1rem;
+			${
+				style === 'whole'
+					? 'border-radius: .4rem;'
+					: style === 'right'
+					? `
+			border-top-right-radius: .4rem;
+			border-bottom-right-radius: .4rem;
+			`
+					: `
+			border-top-left-radius: .4rem;
+			border-bottom-left-radius: .4rem;
+			`
+			}
+			background: ${{ left: 'purple', right: 'red', whole: 'purple' }[style]};
+			margin: 0 .1rem;
+			width: ${width}%;
+			color: white;
+			${shadowStyle}
+		`}
+	></span>
+)

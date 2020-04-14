@@ -2,15 +2,10 @@ import React, { useState } from 'react'
 import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
 import { motion } from 'framer-motion'
+import Emoji from './Emoji'
+import { transportClimateBudget, limits } from './limits.js'
 
-const showBudget = false
-const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
-	climateBudgetPerYear = 2000,
-	climateBudgetPerDay = climateBudgetPerYear / 365,
-	// Based on current share of the annual mean of 12 ton per french
-	// Source : http://ravijen.fr/?p=440
-	transportShare = 1 / 4,
-	transportClimateBudget = climateBudgetPerDay * transportShare
+const showBudget = true
 
 export default ({
 	classement,
@@ -68,22 +63,6 @@ export default ({
 					position: relative;
 				`}
 			>
-				<span
-					css={`
-				${!showBudget ? 'display: none' : ''}
-				height: 100%;
-				left: 0;
-				z-index: -1;
-				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
-
-				width: 0px;
-				border-right: 8px dotted yellow;
-		        position: absolute;
-				margin-top: 2rem;
-				}
-					`}
-					key="budget"
-				></span>
 				<ul
 					css={`
 						margin-left: 2rem;
@@ -119,29 +98,48 @@ export default ({
 					))}
 				</ul>
 			</div>
-			<small
-				css={`
-					text-align: center;
-					display: inline-block;
-					color: purple;
-					font-style: italic;
-					margin-bottom: 1rem;
-					p {
-						margin: 0.3rem;
-					}
-					margin: 0 auto;
-
-					display: block;
-				`}
-			>
-				<p>En équivalent CO2 par personne en France. </p>
-				<p>Cliquer sur les modes pour plus d'info.</p>
-			</small>
 			{showBudget && (
-				<span css=" background: yellow ;">
-					Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
-				</span>
+				<>
+					<p>
+						Pour rester sous les 2 degrés de réchauffement (accord de Paris) :
+					</p>
+					<ol css="list-style-type: none">
+						{limits.map(([color, , text]) => (
+							<li key={color}>
+								<span
+									css={`
+										vertical-align: middle;
+										margin-right: 1rem;
+										display: inline-block;
+										border: 1px solid black;
+										width: 1rem;
+										height: 1rem;
+										background: ${color};
+									`}
+								></span>
+								{text}
+							</li>
+						))}
+					</ol>
+				</>
 			)}
+			<Legende />
 		</section>
 	)
 }
+
+const Legende = () => (
+	<small
+		css={`
+			display: inline-block;
+			color: purple;
+			font-style: italic;
+			margin-bottom: 1rem;
+			margin: 0 auto;
+			display: block;
+		`}
+	>
+		En équivalent CO2 par personne en France. <Emoji emoji="👆" /> Cliquer sur
+		les barres pour plus d'info.
+	</small>
+)

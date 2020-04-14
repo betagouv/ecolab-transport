@@ -5,12 +5,14 @@ import modes from './ges-transport.yaml'
 import Classement from './Classement'
 import Input from './Input'
 import facteur from './calcul'
+import useDebounce from './useDebounce'
 
 const urlParams = new URLSearchParams(window.location.search)
 const distanceInitiale = urlParams.get('distanceInitiale')
 
 export default ({ setRouter }) => {
-	const [distance, setDistance] = useState(+distanceInitiale || 10)
+	const [distance0, setDistance] = useState(+distanceInitiale || 10)
+	const distance = useDebounce(distance0, 500)
 	const [options, setOptions] = useState({})
 	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
 		modesCommuns = modes['les deux'],
@@ -81,7 +83,7 @@ export default ({ setRouter }) => {
 					Votre impact <em>climat</em>
 				</h1>
 			</header>
-			<Input {...{ distance, setDistance, modes }} />
+			<Input {...{ distance: distance0, setDistance, modes }} />
 			<Classement
 				{...{
 					classement,

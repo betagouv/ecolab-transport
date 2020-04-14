@@ -14,7 +14,14 @@ export default ({ facteur, mode, options, distance }) => {
 		distance * (facteur(distance, mode, options) / 1000)
 	)
 	return (
-		<span css="color: purple; font-weight: 600; vertical-align: baseline;">
+		<span
+			css={`
+				color: purple;
+				font-weight: 600;
+				vertical-align: baseline;
+				margin-left: 0.6rem;
+			`}
+		>
 			{value < 10 ? value.toFixed(1) : Math.round(value)}&nbsp;{unit}
 		</span>
 	)
