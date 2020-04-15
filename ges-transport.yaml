@@ -53,9 +53,9 @@ extra-urbains:
         #      de jour: 978
   - titre: TGV
     icônes: 🚄
-    gCO2e/km/personne: 1.9
-    note: 1,9 gCO2e/km/personne ; SNCF 2019
-    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+    gCO2e/km/personne: 2.4
+    note: 2,4 gCO2e/km/personne ; SNCF 2018
+    source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
   - titre: Trains grandes lignes
     icônes: 🚈
     gCO2e/km/personne: 5.7
