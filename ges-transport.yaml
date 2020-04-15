@@ -77,12 +77,20 @@ extra-urbains:
 urbains:
   - titre: marche
     icônes: 🚶
-    gCO2e/km/personne: 0 # à préciser
-    note: 0 gCO2e/km/personne ; l'impact de la marche est ici considéré comme négligeable.
-  - titre: vélo # ou vélo électrique, désactivé pour l'instant en l'attente de données ADEME
+    gCO2e/km/personne: 0
+    note: 0 gCO2e/km/personne ; l'impact de la marche est ici considéré comme négligeable
+  - titre: vélo
     icônes: 🚴
-    gCO2e/km/personne: 0 # à préciser
-    note: 0 gCO2e/km/personne ; l'impact du vélo est ici considéré comme négligeable.
+    gCO2e/km/personne: 0
+    note: 0 gCO2e/km/personne ; l'impact du vélo est ici considéré comme négligeable
+  - titre: vélo à assistance électrique
+    icônes: 🚴⚡
+    gCO2e/km/personne: 4.5
+    note: 4,5 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
+  - titre: trottinettes électrique
+    icônes: 🛴⚡
+    gCO2e/km/personne: 9.7
+    note: 9,7 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
   - titre: bus thermique
     icônes: 🚌
     gCO2e/km/personne: 
@@ -119,7 +127,11 @@ les deux:
     gCO2e/km/personne: 61.6
     note: 61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
-  # - 2 roues ⚡
+- titre: deux roues thermique > 250 cm3
+    icônes: 🏍️
+    gCO2e/km/personne: 168
+    note: 168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+# - 2 roues ⚡
   # Pas encore de donnée
   - titre: RER ou Transilien
     icônes: 🚈
