@@ -99,11 +99,12 @@ urbains:
       250-∞ k habitants: 103
     note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
-  - titre: tram ou trolleybus
+  - titre: tram
     icônes: 🚋
-    gCO2e/km/personne: 
-      150-250 k habitants: 3.1
-      250-∞ k habitants: 3.1
+    gCO2e/km/personne: 3.1
+    # taille des villes à introduire par la suite
+    # 150-250 k habitants: 3.1
+    # 250-∞ k habitants: 3.1
     note: 3,1 gCO2e/km/personne ; RATP 2020
     source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
   - titre: métro
