@@ -54,17 +54,6 @@ export default ({ setRouter }) => {
 			`}
 		>
 			<header>
-				<div css="max-width: 30rem; text-align: center">
-					Ce calculateur est une
-					<span css="display: inline-block; width: 6rem;background: purple; padding: 0 .2rem; font-size: 90%; text-align: center; color: white; border-radius: .6rem; margin: 0 .3rem; font-weight: 900">
-						version test
-					</span>
-					<br />
-					Une question, une suggestion ?{' '}
-					<a href="https://airtable.com/shr0MkHMKnpkWil7F">
-						Faites-nous part de vos retours !
-					</a>
-				</div>
 				<div
 					css={`
 						display: flex;
@@ -77,8 +66,9 @@ export default ({ setRouter }) => {
 						<img css="height: 5vh" src={logoEcolab} />
 					</a>
 				</div>
-				<h1>
+				<h1 css="position: relative">
 					Votre impact <em>climat</em>
+					<VersionBeta />
 				</h1>
 			</header>
 			<Input {...{ distance, setDistance, modes }} />
@@ -89,14 +79,46 @@ export default ({ setRouter }) => {
 					setOptions,
 					facteur,
 					distance,
-					empreinteMaximum
+					empreinteMaximum,
 				}}
 			/>
-			<div>
-				<button onClick={() => setRouter('integration')}>
+			<div css="text-align: center">
+				<button css="margin: 1rem" onClick={() => setRouter('integration')}>
 					Intégrez ce calculateur sur votre site{' '}
 				</button>
+				<NousContacer />
 			</div>
 		</div>
 	)
 }
+
+const VersionBeta = () => (
+	<span
+		css={`
+			display: inline-block;
+			width: 2.2rem;
+			background: #83a7c9;
+			padding: 0 0.2rem;
+			font-size: 45%;
+			text-align: center;
+			color: white;
+			border-radius: 0.6rem;
+			margin: 0 0.3rem;
+			font-weight: 900;
+			position: absolute;
+			right: -2.6rem;
+			transform: rotate(35deg);
+		`}
+	>
+		beta
+	</span>
+)
+
+const NousContacer = () => (
+	<div css="max-width: 30rem; text-align: center">
+		Une question, une suggestion ?{' '}
+		<a href="https://airtable.com/shr0MkHMKnpkWil7F">
+			Faites-nous part de vos retours !
+		</a>
+	</div>
+)
