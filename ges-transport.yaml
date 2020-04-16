@@ -122,15 +122,19 @@ urbains:
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
-  - titre: deux roues thermique < 250 cm3
+  - titre: scooter et motos légères
     icônes: 🛵
     gCO2e/km/personne: 61.6
-    note: 61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+    note: |
+      Deux routes thermiques < 250cm3
+      61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
-  - titre: deux roues thermique > 250 cm3
+  - titre: moto
     icônes: 🏍️
     gCO2e/km/personne: 168
-    note: 168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+    note: |
+      Deux roues thermiques > 250cm3
+      168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
 # - 2 roues ⚡
   # Pas encore de donnée
   - titre: RER ou Transilien
