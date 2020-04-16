@@ -46,12 +46,16 @@ export default ({
 				onClick={() => setDetails(mode)}
 				css={`
 					font-size: 100%;
-					width: 3rem;
-					margin-left: -3rem;
-					margin-right: 0rem;
+					width: 2.3rem;
+					margin-left: -2.3rem;
 				`}
 			>
-				<Emoji emoji={mode.icônes} />
+				<Emoji emoji={mode.icône} />
+				{mode['icône secondaire'] && (
+					<span css="font-size: 60%">
+						<Emoji emoji={mode['icône secondaire']} />
+					</span>
+				)}
 			</span>
 			<span
 				onClick={() => setDetails(mode)}
