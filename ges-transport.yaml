@@ -87,7 +87,7 @@ urbains:
     icônes: 🚴⚡
     gCO2e/km/personne: 4.5
     note: 4,5 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
-  - titre: trottinettes électrique
+  - titre: trottinette électrique
     icônes: 🛴⚡
     gCO2e/km/personne: 9.7
     note: 9,7 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
@@ -123,7 +123,7 @@ urbains:
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
-  - titre: scooter et motos légères
+  - titre: scooter et moto légère
     icônes: 🛵
     gCO2e/km/personne: 61.6
     note: |
