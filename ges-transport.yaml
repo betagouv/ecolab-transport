@@ -63,7 +63,7 @@ extra-urbains:
     source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
   - titre: voiture thermique
     icônes: 🚗
-    gCO2e/km/personne: 193.2
+    gCO2e/km/véhicule: 193.2
     voyageurs: 2.4
     note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ extra-urbaine
@@ -114,7 +114,7 @@ urbains:
     source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
   - titre: voiture thermique
     icônes: 🚗
-    gCO2e/km/personne: 193.2 
+    gCO2e/km/véhicule: 193.2 
     voyageurs: 1.2
     note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ urbaine

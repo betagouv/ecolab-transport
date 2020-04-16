@@ -3,6 +3,11 @@ export default (distance, m, { voyageurs, propulsion } = {}) => {
 	const parPersonne = m['gCO2e/km/personne']
 
 	if (m.titre.includes('voiture')) {
+		const parVéhicule = m['gCO2e/km/véhicule']
+		console.log(parVéhicule, m.voyageurs)
+		if (parVéhicule) return parVéhicule / (voyageurs || m.voyageurs)
+
+		// Nous avions précédemment des données / voyageur
 		const parVoiture = m.voyageurs * parPersonne
 		return parVoiture / (voyageurs || m.voyageurs)
 	}
@@ -24,7 +29,7 @@ export default (distance, m, { voyageurs, propulsion } = {}) => {
 	}
 	if (m.titre === 'avion') {
 		let chiffresPertinents = Object.values(parPersonne)
-			.map(intervalles =>
+			.map((intervalles) =>
 				Object.entries(intervalles).find(([intervalle]) =>
 					dansIntervalle(distance, intervalle, 'km')
 				)
