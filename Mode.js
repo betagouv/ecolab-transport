@@ -12,7 +12,7 @@ export default ({
 	distance,
 	facteur,
 	empreinteMaximum,
-	setDetails
+	setDetails,
 }) => (
 	<>
 		<div>
@@ -23,14 +23,16 @@ export default ({
 			{mode.titre.includes('voiture') && (
 				<Covoitureurs
 					voyageurs={options.voyageurs || mode.voyageurs}
-					setVoyageurs={n => setOptions({ ...options, voyageurs: n })}
+					setVoyageurs={(n) => setOptions({ ...options, voyageurs: n })}
 				/>
 			)}
 			{false && //Le choix de la propulsion TER est en test
 				mode.titre.includes('TER') && (
 					<Propulsion
 						propulsion={options.propulsion}
-						setPropulsion={propulsion => setOptions({ ...options, propulsion })}
+						setPropulsion={(propulsion) =>
+							setOptions({ ...options, propulsion })
+						}
 					/>
 				)}
 		</div>
@@ -42,7 +44,12 @@ export default ({
 		>
 			<span
 				onClick={() => setDetails(mode)}
-				css="font-size: 100%; width: 1.5rem; margin-left: -2rem; margin-right: .6rem"
+				css={`
+					font-size: 100%;
+					width: 3rem;
+					margin-left: -3rem;
+					margin-right: 0rem;
+				`}
 			>
 				<Emoji emoji={mode.icônes} />
 			</span>
@@ -58,8 +65,8 @@ export default ({
 					border-radius: 0.4rem;
 					width: ${((distance * facteur(distance, mode, options)) /
 						empreinteMaximum) *
-						100 *
-						0.9}%;
+					100 *
+					0.9}%;
 					color: white;
 					${shadowStyle}
 				`}
@@ -68,5 +75,5 @@ export default ({
 		</div>
 	</>
 )
-export const capitalizeFirst = text =>
+export const capitalizeFirst = (text) =>
 	text[0].toUpperCase() + text.slice(1, text.length)
