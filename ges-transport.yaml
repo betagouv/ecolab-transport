@@ -129,7 +129,7 @@ les deux:
     icône: 🛵
     gCO2e/km/personne: 61.6
     note: |
-      Deux routes thermiques < 250cm3
+      Deux roues thermiques < 250cm3
       61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
   - titre: moto
