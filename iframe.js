@@ -6,7 +6,8 @@ const script = document.getElementById('ecolab-transport'),
 	tmp = document.createElement('a')
 
 tmp.href = script.src
-const src = `https://${tmp.hostname}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
+const hostname = tmp.hostname.replace('netlify.com', 'netlify.app') // the old netlify URL redirects, but causes problems for auto-resizing the iframe
+const src = `https://${hostname}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
 
@@ -16,7 +17,7 @@ const iframeAttributes = {
 		'border: none; width: 100%; display: block; margin: 10px auto; min-height: 700px',
 	allowfullscreen: true,
 	webkitallowfullscreen: true,
-	mozallowfullscreen: true
+	mozallowfullscreen: true,
 }
 for (var key in iframeAttributes) {
 	iframe.setAttribute(key, iframeAttributes[key])
