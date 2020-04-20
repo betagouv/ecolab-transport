@@ -1,7 +1,7 @@
 limite trajet urbain: 80km
 extra-urbains:
   - titre: avion 
-    icônes: ✈️
+    icône: ✈️
     gCO2e/km/personne:
       0-50 sièges:
         0-1000 km: 683
@@ -47,92 +47,112 @@ extra-urbains:
     
         # Pas de ferry pour l'instant, en attendant d'avoir validé ces données qui semble monstrueusement polluantes
         # - titre: ferry
-        #    icônes: ⛴️
+        #    icône: ⛴️
         #    gCO2e/km/personne:
         #      de nuit: 524
         #      de jour: 978
   - titre: TGV
-    icônes: 🚄
-    gCO2e/km/personne: 1.9
-    note: 1,9 gCO2e/km/personne ; SNCF 2019
-    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+    icône: 🚄
+    gCO2e/km/personne: 2.4
+    note: 2,4 gCO2e/km/personne ; SNCF 2018
+    source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
   - titre: Trains grandes lignes
-    icônes: 🚈
-    gCO2e/km/personne: 5.7
-    note: 5,7 gCO2e/km/personne ; SNCF 2019
-    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+    icône: 🚈
+    gCO2e/km/personne: 8.1
+    note: 8,1 gCO2e/km/personne ; SNCF 2018
+    source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
   - titre: voiture thermique
-    icônes: 🚗
-    gCO2e/km/personne: 72.4
+    icône: 🚗
+    gCO2e/km/véhicule: 193.2
     voyageurs: 2.4
-    note: 72,4 gCO2e/km/personne ; calculs ADEME, base Comptes des transports CGDD (2019), hypothèse 2,4 passagers/voiture
+    note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ extra-urbaine
     #gCO2e/km/personne: 13
   - titre: autocar
-    icônes: 🚌
-    gCO2e/km/personne: 30
-    note: 30 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+    icône: 🚌
+    gCO2e/km/personne: 25.6
+    note: 25,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
 
 urbains:
   - titre: marche
-    icônes: 🚶
-    gCO2e/km/personne: 0 # à préciser
-    note: 0 gCO2e/km/personne ; l'impact de la marche est ici considéré comme négligeable.
-  - titre: vélo # ou vélo électrique, désactivé pour l'instant en l'attente de données ADEME
-    icônes: 🚴
-    gCO2e/km/personne: 0 # à préciser
-    note: 0 gCO2e/km/personne ; l'impact du vélo est ici considéré comme négligeable.
+    icône: 🚶
+    gCO2e/km/personne: 0
+    note: 0 gCO2e/km/personne ; l'impact de la marche est ici considéré comme négligeable
+  - titre: vélo
+    icône: 🚴
+    gCO2e/km/personne: 0
+    note: 0 gCO2e/km/personne ; l'impact du vélo est ici considéré comme négligeable
+  - titre: vélo à assistance électrique
+    icône: 🚴
+    icône secondaire: ⚡
+    gCO2e/km/personne: 4.5
+    note: 4,5 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
+  - titre: trottinette électrique
+    icône: 🛴
+    icône secondaire: ⚡
+    gCO2e/km/personne: 9.7
+    note: 9,7 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
   - titre: bus thermique
-    icônes: 🚌
+    icône: 🚌
     gCO2e/km/personne: 
       0-150 k habitants: 103
       150-250 k habitants: 103
       250-∞ k habitants: 103
-    note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020). Notons que les bus ne transportent en moyenne pas plus de 10 personnes. Prendre le bus, c'est augmenter les taux de remplissage et donc améliorer le bilan de ce moyen de transport !
+    note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
-  - titre: tram ou trolleybus
-    icônes: 🚋
-    gCO2e/km/personne: 
-      150-250 k habitants: 6.81
-      250-∞ k habitants: 6.64
-    note: 6,81 gCO2e/km/personne pour une ville de moins de 250 000 habitants, 6,64 gCO2e/km/personne pour une ville de plus de 250 000 habitants ; Base Carbone ADEME.
-    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=trolleybus
+  - titre: tram
+    icône: 🚋
+    gCO2e/km/personne: 3.1
+    # taille des villes à introduire par la suite
+    # 150-250 k habitants: 3.1
+    # 250-∞ k habitants: 3.1
+    note: 3,1 gCO2e/km/personne ; RATP 2020
+    source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
   - titre: métro
-    icônes: 🚇
-    gCO2e/km/personne: 5.7
-    note: 5.7 gCO2e/km/personne ; Base Carbone ADEME
-    source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=métro
+    icône: 🚇
+    gCO2e/km/personne: 3.8
+    note: 3.8 gCO2e/km/personne ; RATP 2020
+    source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
   - titre: voiture thermique
-    icônes: 🚗
-    gCO2e/km/personne: 177 
+    icône: 🚗
+    gCO2e/km/véhicule: 193.2 
     voyageurs: 1.2
-    note: 177 gCO2e/km/personne ; calculs ADEME, base Comptes des transports CGDD (2019), hypothèse 1,2 passagers/voiture
+    note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ urbaine
     #gCO2e/km/personne: 276
 
 # Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
 # et nous ne disponsons pas d'un facteur d'émission différents par zone
 les deux:
-  - titre: deux roues thermique
-    icônes: 🛵
-    gCO2e/km/personne: 110.7
-    note: 110,7 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+  - titre: scooter et moto légère
+    icône: 🛵
+    gCO2e/km/personne: 61.6
+    note: |
+      Deux roues thermiques < 250cm3
+      61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
-  # - 2 roues ⚡
+  - titre: moto
+    icône: 🏍️
+    gCO2e/km/personne: 168
+    note: |
+      Deux roues thermiques > 250cm3
+      168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+# - 2 roues ⚡
   # Pas encore de donnée
   - titre: RER ou Transilien
-    icônes: 🚈
-    gCO2e/km/personne: 4.5
-    note: 4,5 gCO2e/km/personne ; SNCF 2019
-    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+    icône: 🚈
+    gCO2e/km/personne: 5.4
+    note: 5,4 gCO2e/km/personne ; SNCF 2018
+    source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
   - titre: TER
-    icônes: 🚈
+    icône: 🚈
     gCO2e/km/personne:
-      moyenne: 26.5 # Source : SNCF 2019 
-      électricité: 8.91 # Source : base carbone 
-      diesel: 79.8 # Source : base carbone 
+      moyenne: 29.4 # Source : SNCF 2018 
+      électricité: 8.91 # Source : base carbone à confirmer
+      diesel: 79.8 # Source : base carbone à confirmer
     note: |
-      Moyenne : 26,5 gCO2e/km/personne ; SNCF 2019. Motorisation électrique (grande majorité des cas) : 8,91 gCO2e/km/personne ; Base Carbone ADEME. Motorisation diesel : 79,8 gCO2e/km/personne ; Base Carbone ADEME.
-    source: https://www.oui.sncf/aide/calcul-des-emissions-de-co2-sur-votre-trajet-en-train
+      Moyenne : 29,4 gCO2e/km/personne ; SNCF 2018
+    source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
+    # Motorisation électrique (grande majorité des cas) : 8,91 gCO2e/km/personne ; Base Carbone ADEME. Motorisation diesel : 79,8 gCO2e/km/personne ; Base Carbone ADEME.
 

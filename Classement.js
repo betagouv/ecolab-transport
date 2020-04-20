@@ -18,7 +18,7 @@ export default ({
 	setOptions,
 	facteur,
 	distance,
-	empreinteMaximum
+	empreinteMaximum,
 }) => {
 	const [details, setDetails] = useState(null)
 	return details ? (
@@ -53,10 +53,6 @@ export default ({
 	) : (
 		<section
 			css={`
-				@media (min-width: 800px) {
-					margin: 2rem;
-				}
-				h2,
 				h2 {
 					margin: 0.6rem 0 0.1rem;
 					font-size: 140%;
@@ -93,12 +89,12 @@ export default ({
 						}
 					`}
 				>
-					{classement.map(mode => (
+					{classement.map((mode) => (
 						<motion.li
 							layoutTransition={{
 								type: 'spring',
 								damping: 100,
-								stiffness: 100
+								stiffness: 100,
 							}}
 							key={mode.titre}
 							css="margin: .6rem 0; list-style-type: none; cursor: pointer"
@@ -112,7 +108,7 @@ export default ({
 									facteur,
 									setOptions,
 									empreinteMaximum,
-									setDetails
+									setDetails,
 								}}
 							/>
 						</motion.li>
