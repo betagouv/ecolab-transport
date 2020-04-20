@@ -16,7 +16,7 @@ export default ({ distance, setDistance }) => (
 				padding: 0.6rem;
 				margin: 0rem;
 			}
-			@media (pointer: coarse) and (max-width: 600px) {
+			@media (pointer: coarse) {
 				ul {
 					line-height: 2rem;
 					display: block;
@@ -24,6 +24,7 @@ export default ({ distance, setDistance }) => (
 					overflow-x: auto;
 					width: 90vw;
 					margin: 0 auto;
+					text-align: center;
 				}
 			}
 			li {
