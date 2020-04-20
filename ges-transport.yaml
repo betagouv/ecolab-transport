@@ -64,7 +64,7 @@ extra-urbains:
   - titre: voiture thermique
     icône: 🚗
     gCO2e/km/véhicule: 193.2
-    voyageurs: 2.4
+    voyageurs: 2
     note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ extra-urbaine
     #gCO2e/km/personne: 13
@@ -117,7 +117,7 @@ urbains:
   - titre: voiture thermique
     icône: 🚗
     gCO2e/km/véhicule: 193.2 
-    voyageurs: 1.2
+    voyageurs: 1
     note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
     #  - titre: Voiture ⚡ urbaine
     #gCO2e/km/personne: 276
@@ -129,14 +129,14 @@ les deux:
     icône: 🛵
     gCO2e/km/personne: 61.6
     note: |
-      Deux roues thermiques < 250cm3
+      Deux roues thermiques < 250cm3 ; 
       61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
   - titre: moto
     icône: 🏍️
     gCO2e/km/personne: 168
     note: |
-      Deux roues thermiques > 250cm3
+      Deux roues thermiques > 250cm3 ; 
       168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
 # - 2 roues ⚡
   # Pas encore de donnée
