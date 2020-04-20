@@ -6,6 +6,7 @@ export default ({ distance, setDistance }) => (
 	<div
 		css={`
 			margin-top: 1rem;
+
 			ul {
 				display: flex;
 				justify-content: center;
@@ -15,15 +16,14 @@ export default ({ distance, setDistance }) => (
 				padding: 0.6rem;
 				margin: 0rem;
 			}
-			@media (max-width: 800px) {
+			@media (pointer: coarse) and (max-width: 600px) {
 				ul {
-					display: flex;
-					justify-content: center;
-					justify-items: center;
-					flex-wrap: wrap;
+					line-height: 2rem;
+					display: block;
 					white-space: nowrap;
 					overflow-x: auto;
 					width: 90vw;
+					margin: 0 auto;
 				}
 			}
 			li {
