@@ -123,6 +123,7 @@
 
 - titre: scooter et moto légère
   icône: 🛵
+  bornes: jusqu'à 150km
   gCO2e/km/personne: 61.6
   note: |
     Deux roues thermiques < 250cm3 ; 
