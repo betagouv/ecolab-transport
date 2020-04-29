@@ -101,7 +101,7 @@ urbains:
       250-∞ k habitants: 103
     note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
     #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
-  - titre: tram
+  - titre: tramway
     icône: 🚋
     gCO2e/km/personne: 3.1
     # taille des villes à introduire par la suite
