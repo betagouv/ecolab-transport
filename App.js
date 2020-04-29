@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logoAdeme from './ademe.jpg'
+import logoAdeme from './ademe.png'
 import logoEcolab from './ecolab.png'
 import modes from './ges-transport.yaml'
 import Classement from './Classement'
@@ -28,7 +28,7 @@ export default ({ setRouter }) => {
 	return (
 		<div
 			css={`
-				padding: 1rem;
+				padding: 0.6rem 1rem 2rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
@@ -59,12 +59,13 @@ export default ({ setRouter }) => {
 						display: flex;
 						justify-content: center;
 						align-items: center;
+						margin-bottom: 1rem;
 					`}
 				>
-					{false && <img css="height: 6vh" src={logoAdeme} />}
 					<a href="https://ecolab.ademe.fr">
 						<img css="height: 5vh" src={logoEcolab} />
 					</a>
+					<img css="height: 6vh" src={logoAdeme} />
 				</div>
 				<h1 css="position: relative">
 					Votre impact <em>climat</em>
