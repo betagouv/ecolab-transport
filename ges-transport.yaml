@@ -65,10 +65,8 @@
 - titre: voiture thermique
   icône: 🚗
   gCO2e/km/véhicule: 193.2
-  voyageurs: 2
+  voyageurs: 1
   note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
-  #  - titre: Voiture ⚡ extra-urbaine
-  #gCO2e/km/personne: 13
 - titre: autocar
   icône: 🚌
   bornes: à partir de 15km
@@ -122,16 +120,7 @@
   gCO2e/km/personne: 3.8
   note: 3.8 gCO2e/km/personne ; RATP 2020
   source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
-- titre: voiture thermique
-  icône: 🚗
-  gCO2e/km/véhicule: 193.2 
-  voyageurs: 1
-  note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
-  #  - titre: Voiture ⚡ urbaine
-  #gCO2e/km/personne: 276
 
-# Ces modes-là peuvent êtres à la fois urbains et extra-urbains,
-# et nous ne disponsons pas d'un facteur d'émission différents par zone
 - titre: scooter et moto légère
   icône: 🛵
   gCO2e/km/personne: 61.6
