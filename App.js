@@ -6,6 +6,11 @@ import Classement from './Classement'
 import Input from './Input'
 import facteur from './calcul'
 
+console.log(
+	"modes n'ayant de pas de bornes min et max définies",
+	modes.filter((mode) => !mode.bornes).map((mode) => mode.titre)
+)
+
 const urlParams = new URLSearchParams(window.location.search)
 const distanceInitiale = urlParams.get('distanceInitiale')
 
