@@ -6,22 +6,36 @@ import Classement from './Classement'
 import Input from './Input'
 import facteur from './calcul'
 
+console.log(
+	"modes n'ayant de pas de bornes min et max définies",
+	modes.filter((mode) => !mode.bornes).map((mode) => mode.titre)
+)
+
 const urlParams = new URLSearchParams(window.location.search)
 const distanceInitiale = urlParams.get('distanceInitiale')
 
 export default ({ setRouter }) => {
 	const [distance, setDistance] = useState(+distanceInitiale || 10)
 	const [options, setOptions] = useState({})
-	const limiteUrbain = +modes['limite trajet urbain'].split('km')[0],
-		modesCommuns = modes['les deux'],
-		modesPertinents =
-			distance > limiteUrbain
-				? [...modes['extra-urbains'], ...modesCommuns]
-				: [...modes['urbains'], ...modesCommuns],
-		classement = modesPertinents.sort(
-			(m1, m2) =>
-				facteur(distance, m1, options) - facteur(distance, m2, options)
-		),
+
+	const classement = modes
+			.filter(({ bornes }) => {
+				if (!bornes) return true
+				const min = bornes.split('à partir de ')
+				const max = bornes.split("jusqu'à ")
+				if (min.length > 1 && max.length > 1)
+					throw Error('Pas implémenté encore')
+				if (min.length > 1) {
+					return distance >= +min[1].split('km')[0]
+				}
+				if (max.length > 1) {
+					return distance <= +max[1].split('km')[0]
+				}
+			})
+			.sort(
+				(m1, m2) =>
+					facteur(distance, m1, options) - facteur(distance, m2, options)
+			),
 		empreinteMaximum =
 			distance * facteur(distance, classement[classement.length - 1], options)
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Suggestions from './Suggestions'
 import { blue, shadowStyle } from './styles'
-export default ({ distance, setDistance, modes }) => (
+export default ({ distance, setDistance }) => (
 	<section
 		css={`
 			margin: 0 0 0.4rem 0;
@@ -44,6 +44,6 @@ export default ({ distance, setDistance, modes }) => (
 				km
 			</div>
 		</label>
-		<Suggestions {...{ modes, distance, setDistance }} />
+		<Suggestions {...{ distance, setDistance }} />
 	</section>
 )

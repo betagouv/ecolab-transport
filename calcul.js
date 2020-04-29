@@ -4,7 +4,6 @@ export default (distance, m, { voyageurs, propulsion } = {}) => {
 
 	if (m.titre.includes('voiture')) {
 		const parVéhicule = m['gCO2e/km/véhicule']
-		console.log(parVéhicule, m.voyageurs)
 		if (parVéhicule) return parVéhicule / (voyageurs || m.voyageurs)
 
 		// Nous avions précédemment des données / voyageur
