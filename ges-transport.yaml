@@ -56,7 +56,7 @@
   gCO2e/km/personne: 2.4
   note: 2,4 gCO2e/km/personne ; SNCF 2018
   source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
-- titre: Trains grandes lignes
+- titre: Intercités
   icône: 🚈
   bornes: à partir de 50km
   gCO2e/km/personne: 8.1
