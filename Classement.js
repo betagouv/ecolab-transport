@@ -130,7 +130,7 @@ export default ({
 					display: block;
 				`}
 			>
-				<p>En équivalent CO₂ par personne en France. </p>
+				<p>Équivalent CO₂ par personne en France, phase d'usage uniquement.</p>
 				<p>Sources : cliquer sur les dfférents modes.</p>
 			</small>
 			{showBudget && (
