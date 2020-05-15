@@ -18,37 +18,37 @@ module.exports = {
 							presets: ['@babel/preset-env', '@babel/preset-react'],
 							plugins: [
 								'babel-plugin-styled-components',
-								isDevelopment && require.resolve('react-refresh/babel')
-							].filter(Boolean)
-						}
-					}
-				]
+								isDevelopment && require.resolve('react-refresh/babel'),
+							].filter(Boolean),
+						},
+					},
+				],
 			},
 			{
 				test: /\.(jpe?g|png|svg)$/,
 				use: {
 					loader: 'file-loader',
 					options: {
-						name: 'images/[name].[ext]'
-					}
-				}
+						name: 'images/[name].[ext]',
+					},
+				},
 			},
 			{
 				test: /\.yaml$/,
-				use: 'js-yaml-loader'
-			}
-		]
+				use: 'js-yaml-loader',
+			},
+		],
 	},
 	entry: {
 		index: './index.js',
-		iframe: './iframe.js'
+		iframe: './iframe.js',
 	},
 	output: {
 		path: __dirname + '/dist',
-		publicPath: '/'
+		publicPath: '/',
 	},
 	devServer: {
-		historyApiFallback: true
+		historyApiFallback: true,
 	},
 
 	plugins: [
@@ -58,7 +58,8 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Ecolab transport',
 			chunks: ['index'],
-			template: 'index.html'
-		})
-	].filter(Boolean)
+			template: 'index.html',
+			base: process.env.URL_PATH,
+		}),
+	].filter(Boolean),
 }
