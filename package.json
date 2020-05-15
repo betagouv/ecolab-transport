@@ -1,6 +1,6 @@
 {
 	"name": "ecolab-transport",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "",
 	"main": "index.html",
 	"license": "MIT",
@@ -8,7 +8,7 @@
 		"start": "webpack-dev-server --hot --mode development",
 		"build-web": "NODE_ENV=production webpack -p -c webpack.config.js",
 		"build-data": "node yamlToJson.js && node yamlToCsv.js",
-		"build": "URL_PATH=/apps/transport npm run build-web && npm run build-data"
+		"build": "URL_PATH=/apps/transport/ npm run build-web && npm run build-data"
 	},
 	"dependencies": {
 		"copy-webpack-plugin": "^5.1.1",

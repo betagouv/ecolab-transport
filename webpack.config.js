@@ -3,6 +3,12 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const CopyPlugin = require('copy-webpack-plugin')
 
+// If on master, with a URL_PATH env (used by the yarn build commmand)
+// inject a base path, since the website is used from ecolab.ademe.fr/apps/transport/
+//
+// Only for the master branch, to enable netlify branch reviews to work
+const prodPath = process.env.BRANCH === 'master' && process.env.URL_PATH
+
 module.exports = {
 	mode: isDevelopment ? 'development' : 'production',
 	module: {
@@ -45,7 +51,7 @@ module.exports = {
 	},
 	output: {
 		path: __dirname + '/dist',
-		publicPath: '/',
+		publicPath: prodPath || '/',
 	},
 	devServer: {
 		historyApiFallback: true,
@@ -59,7 +65,7 @@ module.exports = {
 			title: 'Ecolab transport',
 			chunks: ['index'],
 			template: 'index.html',
-			base: process.env.URL_PATH,
+			...(prodPath ? { base: prodPath } : {}),
 		}),
 	].filter(Boolean),
 }
