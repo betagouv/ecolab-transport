@@ -2,11 +2,9 @@ import { iframeResize } from 'iframe-resizer'
 
 const script = document.getElementById('ecolab-transport'),
 	distanceInitiale = encodeURIComponent(script.dataset.distanceInitiale),
-	integratorUrl = encodeURIComponent(window.location.href.toString()),
-	tmp = document.createElement('a')
+	integratorUrl = encodeURIComponent(window.location.href.toString())
 
-tmp.href = script.src
-const hostname = tmp.hostname.replace('netlify.com', 'netlify.app') // the old netlify URL redirects, but causes problems for auto-resizing the iframe
+const hostname = 'ecolab.ademe.fr/apps/transport/'
 const src = `https://${hostname}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
