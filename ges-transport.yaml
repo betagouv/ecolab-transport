@@ -3,7 +3,9 @@
   bornes: à partir de 500km
   gCO2e/km/personne:
     51-100 sièges:
-      0-500 km: 453 # A mettre à jour et ajouter distinction AVEC / SANS trainée
+      0-500 km: 
+        sans trainées: 453
+        avec trainées: 453 
     101-220 sièges:
       500-1000 km: 314 # A mettre à jour et ajouter distinction AVEC / SANS trainée
       1000-2000 km: 259 # A mettre à jour et ajouter distinction AVEC / SANS trainée
@@ -11,6 +13,8 @@
       2000-3500 km: 216 # A mettre à jour et ajouter distinction AVEC / SANS trainée
       3500-∞ km: 223 # A mettre à jour et ajouter distinction AVEC / SANS trainée
   note: |
+    Nous avons représenté le forçage radiatif additionel des trainées de condensation via le dégradé.
+
     L'avion est proposé à partir de 500 km, avec les tailles suivantes : 
     - 500 km - 51 à 100 sièges
     - 501 à 2000 km - 101 à 220 sièges
