@@ -10,7 +10,15 @@
     220-∞ sièges:
       2001-3500 km: 216 # A mettre à jour et ajouter distinction AVEC / SANS trainée
       3501-∞ km: 223 # A mettre à jour et ajouter distinction AVEC / SANS trainée
-  note: L'avion est proposé à partir de 500 km, avec les tailles suivantes : 500 km - 51 à 100 sièges ; 501 à 2000 km - 101 à 220 sièges ; au delà de 2000 km - >220 sièges. Ce calculateur présente les données avec et sans impact induit des trainées de condensation. Source : Base Carbone ADEME.
+  note: |
+    L'avion est proposé à partir de 500 km, avec les tailles suivantes : 
+    - 500 km - 51 à 100 sièges
+    - 501 à 2000 km - 101 à 220 sièges
+    - au delà de 2000 km - >220 sièges. 
+    
+    Ce calculateur présente les données avec et sans impact induit des trainées de condensation. 
+    
+    Source : Base Carbone ADEME.
   source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion
   
       # Pas de ferry pour l'instant, en attendant d'avoir validé ces données qui semble monstrueusement polluantes
