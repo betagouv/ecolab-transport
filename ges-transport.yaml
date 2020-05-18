@@ -5,11 +5,11 @@
     51-100 sièges:
       0-500 km: 453 # A mettre à jour et ajouter distinction AVEC / SANS trainée
     101-220 sièges:
-      501-1000 km: 314 # A mettre à jour et ajouter distinction AVEC / SANS trainée
-      1001-2000 km: 259 # A mettre à jour et ajouter distinction AVEC / SANS trainée
+      500-1000 km: 314 # A mettre à jour et ajouter distinction AVEC / SANS trainée
+      1000-2000 km: 259 # A mettre à jour et ajouter distinction AVEC / SANS trainée
     220-∞ sièges:
-      2001-3500 km: 216 # A mettre à jour et ajouter distinction AVEC / SANS trainée
-      3501-∞ km: 223 # A mettre à jour et ajouter distinction AVEC / SANS trainée
+      2000-3500 km: 216 # A mettre à jour et ajouter distinction AVEC / SANS trainée
+      3500-∞ km: 223 # A mettre à jour et ajouter distinction AVEC / SANS trainée
   note: |
     L'avion est proposé à partir de 500 km, avec les tailles suivantes : 
     - 500 km - 51 à 100 sièges
