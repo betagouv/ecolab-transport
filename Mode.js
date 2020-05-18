@@ -5,6 +5,17 @@ import Value from './Value'
 import Emoji from './Emoji'
 import React from 'react'
 
+const barStyle = `
+					display: inline-block;
+					background: purple;
+					margin-top: 0rem;
+					margin-right: 0.8rem;
+					height: 1.1rem;
+					padding-left: 0.1rem;
+					border-radius: 0.4rem;
+					color: white;
+					`
+
 export default ({
 	mode,
 	options,
@@ -57,24 +68,56 @@ export default ({
 					</span>
 				)}
 			</span>
-			<span
-				onClick={() => setDetails(mode)}
-				css={`
-					display: inline-block;
-					background: purple;
-					margin-top: 0rem;
-					margin-right: 0.8rem;
-					height: 1.1rem;
-					padding-left: 0.1rem;
-					border-radius: 0.4rem;
-					width: ${((distance * facteur(distance, mode, options)) /
-						empreinteMaximum) *
-					100 *
-					0.9}%;
-					color: white;
+
+			{mode.titre === 'avion' ? (
+				<>
+					<span
+						onClick={() => setDetails(mode)}
+						css={`
+				${barStyle}
+					width: ${
+						((distance * facteur(distance, mode, options)) / empreinteMaximum) *
+						100 *
+						0.9 *
+						0.6
+					}%;
+					margin-right: 2px;
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
 					${shadowStyle}
 				`}
-			></span>
+					></span>
+					<span
+						onClick={() => setDetails(mode)}
+						css={`
+				${barStyle}
+					width: ${
+						((distance * facteur(distance, mode, options)) / empreinteMaximum) *
+						100 *
+						0.9 *
+						0.4
+					}%;
+					background:   linear-gradient(to right, purple, white);
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+					${shadowStyle}
+				`}
+					></span>
+				</>
+			) : (
+				<span
+					onClick={() => setDetails(mode)}
+					css={`
+				${barStyle}
+					width: ${
+						((distance * facteur(distance, mode, options)) / empreinteMaximum) *
+						100 *
+						0.9
+					}%;
+					${shadowStyle}
+				`}
+				></span>
+			)}
 			<Value {...{ mode, facteur, options, distance }} />
 		</div>
 	</>
