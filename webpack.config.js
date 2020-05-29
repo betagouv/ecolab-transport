@@ -58,8 +58,7 @@ module.exports = {
 	},
 
 	plugins: [
-		isDevelopment &&
-			new ReactRefreshWebpackPlugin({ disableRefreshCheck: true }),
+		isDevelopment && new ReactRefreshWebpackPlugin(),
 		new CopyPlugin(['iframeResizer.contentWindow.min.js']),
 		new HtmlWebpackPlugin({
 			title: 'Ecolab transport',
