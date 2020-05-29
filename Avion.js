@@ -32,7 +32,9 @@ export default ({
 				css={`
 				${barStyle}
 					width: ${((distance * diff) / empreinteMaximum) * 100 * 0.9}%;
-					background:   linear-gradient(to right, purple, white);
+					background:   linear-gradient(to right, purple, #a665a67a); 
+					/* The gradient represents the incertainty of this measure. We attribute a diluted purple to the end of the bar since it represents the most probable value. The most extreme but plausible value, not painted here, would be pure white.
+					 */
 					border-top-left-radius: 0;
 					border-bottom-left-radius: 0;
 					${shadowStyle}
