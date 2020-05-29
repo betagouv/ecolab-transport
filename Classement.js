@@ -16,7 +16,6 @@ export default ({
 	classement,
 	options,
 	setOptions,
-	facteur,
 	distance,
 	empreinteMaximum,
 }) => {
@@ -105,7 +104,6 @@ export default ({
 									options,
 									setOptions,
 									distance,
-									facteur,
 									setOptions,
 									empreinteMaximum,
 									setDetails,

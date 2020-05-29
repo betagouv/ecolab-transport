@@ -2,20 +2,18 @@
   icône: ✈️
   bornes: à partir de 500km
   gCO2e/km/personne:
-    101-220 sièges:
-      500-1000 km:
-        sans trainées: 126
-        avec trainées: 230
-      1000-2000 km:
-        sans trainées: 102
-        avec trainées: 186
-    220-∞ sièges:
-      2000-3500 km:
-        sans trainées: 97.4
-        avec trainées: 178
-      3500-∞ km:
-        sans trainées: 82.8
-        avec trainées: 151
+    500-1000 km:
+      sans trainées: 126
+      avec trainées: 230
+    1000-2000 km:
+      sans trainées: 102
+      avec trainées: 186
+    2000-3500 km:
+      sans trainées: 97.4
+      avec trainées: 178
+    3500-∞ km:
+      sans trainées: 82.8
+      avec trainées: 151
   note: |
     Les deux parties de la barre représentent l'impact du vol sans (à gauche) et avec (à droite, en dégradé) prise en compte de l'impact induit des traînées de condensation, tel que présenté dans la Base Carbone de l'ADEME.
     Du fait que les avions volent à haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO2 (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.) : c'est cet impact additionnel (dit forçage radiatif additionnel) qui est représenté par la partie de droite de la barre.

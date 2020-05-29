@@ -1,6 +1,6 @@
 import React from 'react'
 
-const humanWeightUnit = v =>
+const humanWeightUnit = (v) =>
 	v === 0
 		? [v, '']
 		: v < 1
@@ -9,9 +9,9 @@ const humanWeightUnit = v =>
 		? [v, 'kg']
 		: [v / 1000, 't']
 
-export default ({ facteur, mode, options, distance }) => {
+export default ({ facteurValue, mode, options, distance }) => {
 	const [value, unit] = humanWeightUnit(
-		distance * (facteur(distance, mode, options) / 1000)
+		distance * (facteurValue(distance, mode, options) / 1000)
 	)
 	return (
 		<span css="color: purple; font-weight: 600; vertical-align: baseline;">
