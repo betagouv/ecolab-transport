@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import Mode from './Mode'
 import { capitalizeFirst } from './Mode'
 import { motion } from 'framer-motion'
+const Note = React.lazy(() => import('./Note'))
 
 const showBudget = false
 const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
@@ -16,7 +17,6 @@ export default ({
 	classement,
 	options,
 	setOptions,
-	facteur,
 	distance,
 	empreinteMaximum,
 }) => {
@@ -29,20 +29,23 @@ export default ({
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				padding: 1rem;
+				padding: 2rem;
 				margin: 1rem;
 				min-height: 20rem;
 				background: #f3f2fd;
 				border-radius: 1rem;
 				max-width: 80%;
-				width: 40rem;
 				button {
 					margin: 1rem;
 				}
 			`}
 		>
 			<h2>{capitalizeFirst(details.titre)}</h2>
-			{details.note && <p>{details.note}</p>}
+			{details.note && (
+				<Suspense fallback={<div>Chargement...</div>}>
+					<Note text={details.note} />
+				</Suspense>
+			)}
 			{details.source && (
 				<a href={details.source} target="_blank">
 					Source
@@ -105,7 +108,6 @@ export default ({
 									options,
 									setOptions,
 									distance,
-									facteur,
 									setOptions,
 									empreinteMaximum,
 									setDetails,

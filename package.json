@@ -1,6 +1,6 @@
 {
 	"name": "ecolab-transport",
-	"version": "2.0.1",
+	"version": "3.0.1",
 	"description": "",
 	"main": "index.html",
 	"license": "MIT",
@@ -16,6 +16,7 @@
 		"iframe-resizer": "^4.2.9",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
+		"react-markdown": "^4.3.1",
 		"styled-components": "^5.0.0",
 		"twemoji": "^12.1.5",
 		"yaml": "^1.8.3"
@@ -24,14 +25,14 @@
 		"@babel/core": "^7.7.7",
 		"@babel/preset-env": "^7.7.1",
 		"@babel/preset-react": "^7.7.0",
-		"@pmmmwh/react-refresh-webpack-plugin": "^0.2.0",
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.3.2",
 		"babel-loader": "^8.0.6",
 		"babel-plugin-styled-components": "^1.10.6",
 		"eslint-plugin-react": "^7.17.0",
 		"file-loader": "^6.0.0",
 		"html-webpack-plugin": "^4.0.3",
 		"js-yaml-loader": "^1.2.2",
-		"react-refresh": "^0.8.1",
+		"react-refresh": "^0.8.3",
 		"webpack": "^4.41.2",
 		"webpack-cli": "^3.3.10",
 		"webpack-dev-server": "^3.10.0"

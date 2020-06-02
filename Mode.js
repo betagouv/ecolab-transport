@@ -4,13 +4,25 @@ import Propulsion from './Propulsion'
 import Value from './Value'
 import Emoji from './Emoji'
 import React from 'react'
+import { facteur, facteurValue } from './calcul'
+import Avion from './Avion'
+
+const barStyle = `
+					display: inline-block;
+					background: purple;
+					margin-top: 0rem;
+					margin-right: 0.8rem;
+					height: 1.1rem;
+					padding-left: 0.1rem;
+					border-radius: 0.4rem;
+					color: white;
+					`
 
 export default ({
 	mode,
 	options,
 	setOptions,
 	distance,
-	facteur,
 	empreinteMaximum,
 	setDetails,
 }) => (
@@ -57,25 +69,35 @@ export default ({
 					</span>
 				)}
 			</span>
-			<span
-				onClick={() => setDetails(mode)}
-				css={`
-					display: inline-block;
-					background: purple;
-					margin-top: 0rem;
-					margin-right: 0.8rem;
-					height: 1.1rem;
-					padding-left: 0.1rem;
-					border-radius: 0.4rem;
-					width: ${((distance * facteur(distance, mode, options)) /
-						empreinteMaximum) *
-					100 *
-					0.9}%;
-					color: white;
+
+			{mode.titre === 'avion' ? (
+				<Avion
+					{...{
+						setDetails,
+						mode,
+						facteur,
+						distance,
+						options,
+						empreinteMaximum,
+						shadowStyle,
+						barStyle,
+					}}
+				/>
+			) : (
+				<span
+					onClick={() => setDetails(mode)}
+					css={`
+				${barStyle}
+					width: ${
+						((distance * facteur(distance, mode, options)) / empreinteMaximum) *
+						100 *
+						0.9
+					}%;
 					${shadowStyle}
 				`}
-			></span>
-			<Value {...{ mode, facteur, options, distance }} />
+				></span>
+			)}
+			<Value {...{ mode, facteurValue, options, distance }} />
 		</div>
 	</>
 )

@@ -4,7 +4,7 @@ import logoEcolab from './ecolab.png'
 import modes from './ges-transport.yaml'
 import Classement from './Classement'
 import Input from './Input'
-import facteur from './calcul'
+import { facteur, facteurValue } from './calcul'
 
 console.log(
 	"modes n'ayant de pas de bornes min et max définies",
@@ -34,10 +34,12 @@ export default ({ setRouter }) => {
 			})
 			.sort(
 				(m1, m2) =>
-					facteur(distance, m1, options) - facteur(distance, m2, options)
+					facteurValue(distance, m1, options) -
+					facteurValue(distance, m2, options)
 			),
 		empreinteMaximum =
-			distance * facteur(distance, classement[classement.length - 1], options)
+			distance *
+			facteurValue(distance, classement[classement.length - 1], options)
 
 	return (
 		<div
@@ -92,7 +94,6 @@ export default ({ setRouter }) => {
 					classement,
 					options,
 					setOptions,
-					facteur,
 					distance,
 					empreinteMaximum,
 				}}

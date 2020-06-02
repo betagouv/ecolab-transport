@@ -2,46 +2,29 @@
   icône: ✈️
   bornes: à partir de 500km
   gCO2e/km/personne:
-    0-50 sièges:
-      0-1000 km: 683
-      1000-2000 km: 806
-      2000-3000 km: 1200
-    50-100 sièges:
-      0-1000 km: 453
-      1000-2000 km: 314
-      2000-3000 km: 209
-    100-180 sièges:
-      0-1000 km: 314
-      1000-2000 km: 259
-      2000-3000 km: 237
-      3000-4000 km: 230
-      4000-5000 km: 292
-      5000-6000 km: 285
-    180-250 sièges:
-      0-1000 km: 292
-      1000-2000 km: 216
-      2000-3000 km: 209
-      3000-4000 km: 230
-      4000-5000 km: 307
-      5000-6000 km: 230
-      6000-7000 km: 223
-      7000-8000 km: 202
-      8000-9000 km: 223
-      9000-10000 km: 216
-    250-∞ sièges:
-      0-1000 km: 292
-      1000-2000 km: 216
-      2000-3000 km: 209
-      3000-4000 km: 252
-      4000-5000 km: 259
-      5000-6000 km: 223
-      6000-7000 km: 209
-      7000-8000 km: 209
-      8000-9000 km: 230
-      9000-10000 km: 223
-      10000-11000 km: 216
-      11000-∞ km: 223
-  note: Par tranche de 1 000 km, la distance fait varier la taille des avions considérés et les facteurs d'émissions (pour une taille d’avion donnée, le facteur d’émission évolue par tranche de 1 000 km) ; Base Carbone ADEME.
+    500-1000 km:
+      sans trainées: 126
+      avec trainées: 230
+    1000-2000 km:
+      sans trainées: 102
+      avec trainées: 186
+    2000-3500 km:
+      sans trainées: 97.4
+      avec trainées: 178
+    3500-∞ km:
+      sans trainées: 82.8
+      avec trainées: 151
+  note: |
+    Les deux parties de la barre représentent l'impact du vol sans (à gauche) et avec (à droite, en dégradé) prise en compte de l'impact induit des traînées de condensation, tel que présenté dans la Base Carbone de l'ADEME.
+    Du fait que les avions volent à haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO2 (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.) : c'est cet impact additionnel (dit forçage radiatif additionnel) qui est représenté par la partie de droite de la barre.
+
+    L'avion est proposé à partir de 500 km, avec les tailles suivantes : 
+    - 500 à 1 000 km, 101 à 220 sièges : 126 gCO2e/km/personne sans l'impact des traînées, 230 gCO2e/km/personne avec l'impact des traînées
+    - 1 000 à 2 000 km, 101 à 220 sièges : 102 gCO2e/km/personne sans l'impact des traînées, 186 gCO2e/km/personne avec l'impact des traînées
+    - 2 000 à 3 500 km, >220 sièges : 97,4 gCO2e/km/personne sans l'impact des traînées, 178 gCO2e/km/personne avec l'impact des traînées
+    - au delà de 3 500 km, >220 sièges : 82,8 gCO2e/km/personne sans l'impact des traînées, 151 gCO2e/km/personne avec l'impact des traînées
+        
+    Source : Base Carbone ADEME
   source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion
   
       # Pas de ferry pour l'instant, en attendant d'avoir validé ces données qui semble monstrueusement polluantes
@@ -73,7 +56,6 @@
   gCO2e/km/personne: 25.6
   note: 25,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
   #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
-
 - titre: marche
   icône: 🚶
   bornes: jusqu'à 10km
