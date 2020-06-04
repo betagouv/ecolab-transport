@@ -47,9 +47,21 @@
   source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
 - titre: voiture thermique
   icône: 🚗
-  gCO2e/km/véhicule: 193.2
+  gCO2e/km/véhicule: 193
   voyageurs: 1
-  note: 193,2 gCO2e/km/véhicule ; calculs ADEME, base Comptes des transports CGDD (2019), moyenne nationale toutes distances, toutes carburations
+  note: |
+    193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. 
+    Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières.
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture
+- titre: voiture électrique
+  icône: 🚗
+  icône secondaire: ⚡
+  gCO2e/km/véhicule: 19.8
+  voyageurs: 1
+  note: |
+    19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - "Coeur de gamme". 
+    Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières.
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture
 - titre: autocar
   icône: 🚌
   bornes: à partir de 15km
