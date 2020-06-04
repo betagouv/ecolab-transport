@@ -133,7 +133,7 @@ export default ({
 				`}
 			>
 				<p>Équivalent CO₂ par personne en France, phase d'usage uniquement.</p>
-				<p>Sources : cliquer sur les dfférents modes.</p>
+				<p>Sources : cliquer sur les différents modes.</p>
 			</small>
 			{showBudget && (
 				<span css=" background: yellow ;">
