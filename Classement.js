@@ -73,7 +73,7 @@ export default ({
 				height: 100%;
 				left: 0;
 				z-index: -1;
-				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
+				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.8}%;
 
 				width: 0px;
 				border-right: 8px dotted yellow;

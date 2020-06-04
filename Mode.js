@@ -91,7 +91,7 @@ export default ({
 					width: ${
 						((distance * facteur(distance, mode, options)) / empreinteMaximum) *
 						100 *
-						0.9
+						0.8
 					}%;
 					${shadowStyle}
 				`}
