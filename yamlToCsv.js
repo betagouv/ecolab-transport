@@ -18,12 +18,12 @@ const fields = ['titre','gCO2e/km/personne','voyageurs', 'bornes', 'source','not
 					// console.log(rule)
 					Object.keys(rule['gCO2e/km/personne']).forEach( k => {
 						if(typeof rule['gCO2e/km/personne'][k] === 'object'){
-							Object.keys(rule['gCO2e/km/personne'][k]).forEach(bornes => {
+							Object.keys(rule['gCO2e/km/personne'][k]).forEach(r => {
 								lines.push({
-									titre: rule.titre,
-									'gCO2e/km/personne': rule['gCO2e/km/personne'][k][bornes],
-									voyageurs: k,
-									bornes,
+									titre: rule.titre + '  ' + r,
+									'gCO2e/km/personne': rule['gCO2e/km/personne'][k][r],
+									voyageurs: undefined,
+									bornes: k,
 									source: rule.source,
 									note: rule.note
 								})
