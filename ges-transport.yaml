@@ -72,12 +72,12 @@
   icône: 🚶
   bornes: jusqu'à 10km
   gCO2e/km/personne: 0
-  note: 0 gCO2e/km/personne ; l'impact de la marche est ici considéré comme négligeable
+  note: 0 gCO2e/km/personne ; ADEME
 - titre: vélo
   icône: 🚴
   bornes: jusqu'à 30km
   gCO2e/km/personne: 0
-  note: 0 gCO2e/km/personne ; l'impact du vélo est ici considéré comme négligeable
+  note: 0 gCO2e/km/personne ; ADEME
 - titre: vélo à assistance électrique
   icône: 🚴
   bornes: jusqu'à 30km
