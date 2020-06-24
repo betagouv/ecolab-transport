@@ -133,7 +133,7 @@ const VersionBeta = () => (
 const NousContacer = () => (
 	<div css="max-width: 30rem; text-align: center">
 		Une question, une suggestion ?{' '}
-		<a href="https://airtable.com/shr0MkHMKnpkWil7F">
+		<a href="https://airtable.com/shr0MkHMKnpkWil7F" target="_blank">
 			Faites-nous part de vos retours !
 		</a>
 	</div>
