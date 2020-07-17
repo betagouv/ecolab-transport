@@ -132,7 +132,7 @@ export default ({
 					display: block;
 				`}
 			>
-				<p>Équivalent CO₂ par personne en France, phases de fonctionnement des moyens de transport et phase amont liée à la production des sources d’énergie (raffinage, transport, distribution...).</p>
+				<p>Équivalent CO₂ par personne en France, phase d'usage uniquement.</p>
 				<p>Sources : cliquer sur les différents modes.</p>
 			</small>
 			{showBudget && (
