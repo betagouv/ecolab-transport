@@ -126,13 +126,21 @@ export default ({
 					margin-bottom: 1rem;
 					p {
 						margin: 0.3rem;
+						max-width: 35rem;
 					}
 					margin: 0 auto;
 
 					display: block;
 				`}
 			>
-				<p>Équivalent CO₂ par personne en France, phase d'usage uniquement.</p>
+				<p>
+					Équivalent CO₂ par personne en France, incluant les émissions directes
+					et la production d’énergie (raffinage, transport, distribution...).
+				</p>
+				<p>
+					La construction des moyens de transport et des infrastructures n'est
+					pas incluse.
+				</p>
 				<p>Sources : cliquer sur les différents modes.</p>
 			</small>
 			{showBudget && (
