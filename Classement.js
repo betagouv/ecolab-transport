@@ -119,10 +119,8 @@ export default ({
 			</div>
 			<small
 				css={`
-					text-align: center;
 					display: inline-block;
 					color: purple;
-					font-style: italic;
 					margin-bottom: 1rem;
 					p {
 						margin: 0.3rem;
