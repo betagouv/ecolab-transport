@@ -82,14 +82,30 @@
   icône: 🚴
   bornes: jusqu'à 30km
   icône secondaire: ⚡
-  gCO2e/km/personne: 4.5
-  note: 4,5 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
+  gCO2e/km/personne: 2
+  note:  |
+    2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME "Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement"
+    Hypothèses :
+    - Capacité de la batterie : 11,6 Ah
+    - Tension : 36 V
+    - Capacité énergétique 417,6 Wh
+    - Distance de 40 km par charge complète
+    - 2 500 km/an
+  source: https://www.ademe.fr/modelisation-evaluation-environnementale-produits-consommation-biens-dequipement
 - titre: trottinette électrique
   icône: 🛴
   bornes: jusqu'à 10km
   icône secondaire: ⚡
-  gCO2e/km/personne: 9.7
-  note: 9,7 gCO2e/km/personne pour la phase d'usage ; Etude ADEME, Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement, en cours de publication
+  gCO2e/km/personne: 2
+  note:  |
+    2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME "Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement"
+    Hypothèses :
+    - Capacité de la batterie : 2,5 Ah
+    - Tension : 36 V
+    - Capacité énergétique : 90 Wh
+    - 300 charges par an
+    - 1 000 km/an
+  source: https://www.ademe.fr/modelisation-evaluation-environnementale-produits-consommation-biens-dequipement
 - titre: bus thermique
   bornes: jusqu'à 15km
   icône: 🚌
