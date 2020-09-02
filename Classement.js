@@ -132,12 +132,11 @@ export default ({
 				`}
 			>
 				<p>
-					Équivalent CO₂ par personne en France, incluant les émissions directes
-					et la production d’énergie (raffinage, transport, distribution...).
+					Équivalent CO₂ par personne en France, incluant les émissions directes, et la production et distribution de carburant et d'électricité.
+
 				</p>
 				<p>
-					La construction des moyens de transport et des infrastructures n'est
-					pas incluse.
+					La construction des véhicules (voiture, vélo, batterie, train, avion...) et des infrastructures (routes, rails, aéroports...) n'est pas incluse.
 				</p>
 				<p>Sources : cliquer sur les différents modes.</p>
 			</small>
