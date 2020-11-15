@@ -36,15 +36,15 @@
 - titre: TGV
   icône: 🚄
   bornes: à partir de 150km
-  gCO2e/km/personne: 2.4
-  note: 2,4 gCO2e/km/personne ; SNCF 2018
-  source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
+  gCO2e/km/personne: 1.73
+  note: 1,73 gCO2e/km/personne ; Base Carbone ADEME
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv
 - titre: Intercités
   icône: 🚈
   bornes: à partir de 50km
-  gCO2e/km/personne: 8.1
-  note: 8,1 gCO2e/km/personne ; SNCF 2018
-  source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
+  gCO2e/km/personne: 5.29
+  note: 5,29 gCO2e/km/personne ; Base Carbone ADEME
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Train
 - titre: voiture thermique
   icône: 🚗
   gCO2e/km/véhicule: 193
@@ -150,18 +150,18 @@
 - titre: RER ou Transilien
   icône: 🚈
   bornes: jusqu'à 100km
-  gCO2e/km/personne: 5.4
-  note: 5,4 gCO2e/km/personne ; SNCF 2018
-  source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
+  gCO2e/km/personne: 4.1
+  note: 4,1 gCO2e/km/personne ; Base Carbone ADEME
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=rer
 - titre: TER
   icône: 🚈
   bornes: jusqu'à 150km
   gCO2e/km/personne:
-    moyenne: 29.4 # Source : SNCF 2018 
+    moyenne: 24.8
     électricité: 8.91 # Source : base carbone à confirmer
     diesel: 79.8 # Source : base carbone à confirmer
   note: |
-    Moyenne : 29,4 gCO2e/km/personne ; SNCF 2018
-  source: http://medias.sncf.com/sncfcom/pdf/co2/Information_CO2_des_prestations_de_transport_Methodologie_generale.pdf
+    Moyenne : 24,8 gCO2e/km/personne ; Base Carbone ADEME
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=ter
   # Motorisation électrique (grande majorité des cas) : 8,91 gCO2e/km/personne ; Base Carbone ADEME. Motorisation diesel : 79,8 gCO2e/km/personne ; Base Carbone ADEME.
 
