@@ -65,9 +65,9 @@
 - titre: autocar
   icône: 🚌
   bornes: à partir de 15km
-  gCO2e/km/personne: 25.6
-  note: 25,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
-  #source: https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf
+  gCO2e/km/personne: 35.2
+  note: 35,2 gCO2e/km/personne ; Base Carbone ADEME, Autocar - Gazole
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autocar
 - titre: marche
   icône: 🚶
   bornes: jusqu'à 10km
@@ -113,23 +113,23 @@
     0-150 k habitants: 103
     150-250 k habitants: 103
     250-∞ k habitants: 103
-  note: 103 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
-  #source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
+  note: 103 gCO2e/km/personne ; Base Carbone ADEME, Autobus - Gazole
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus
 - titre: tramway
   icône: 🚋
   bornes: jusqu'à 12km
-  gCO2e/km/personne: 3.1
+  gCO2e/km/personne: 2.2
   # taille des villes à introduire par la suite
   # 150-250 k habitants: 3.1
   # 250-∞ k habitants: 3.1
-  note: 3,1 gCO2e/km/personne ; RATP 2020
-  source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
+  note: 2,2 gCO2e/km/personne ; Base Carbone ADEME, Tramway - Ile de France
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tramway
 - titre: métro
   icône: 🚇
   bornes: jusqu'à 20km
-  gCO2e/km/personne: 3.8
-  note: 3.8 gCO2e/km/personne ; RATP 2020
-  source: https://www.ratp.fr/index.php/question/pourquoi-calculer-les-emissions-de-gaz-a-effet-de-serre-dues-a-ses-deplacements
+  gCO2e/km/personne: 2.5
+  note: 2,5 gCO2e/km/personne ; Base Carbone ADEME, Métro - Ile de France
+  source: https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro
 
 - titre: scooter et moto légère
   icône: 🛵
