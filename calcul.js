@@ -43,7 +43,7 @@ const dansIntervalle = (distance, intervalle, unité) => {
 		àRaw = intervalle.split('-')[1].split(' ' + unité)[0],
 		à = àRaw === '∞' ? Infinity : +àRaw
 
-	return distance > de && distance <= à
+	return distance >= de && distance < à
 }
 
 export const facteurValue = (distance, m, options) => {
