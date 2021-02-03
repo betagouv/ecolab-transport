@@ -4,7 +4,7 @@ const script = document.getElementById('ecolab-transport'),
 	distanceInitiale = encodeURIComponent(script.dataset.distanceInitiale),
 	integratorUrl = encodeURIComponent(window.location.href.toString())
 
-const hostname = 'ecolab.ademe.fr/apps/transport/'
+const hostname = 'datagir.ademe.fr/apps/transport/'
 const src = `https://${hostname}?distanceInitiale=${distanceInitiale}&iframe&integratorUrl=${integratorUrl}`
 
 const iframe = document.createElement('iframe')
