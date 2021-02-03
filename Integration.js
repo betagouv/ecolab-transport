@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const src = 'https://ecolab.ademe.fr/apps/transport/iframe.js'
+const src = 'https://datagir.ademe.fr/apps/transport/iframe.js'
 export default ({ setRouter }) => {
 	useEffect(() => {
 		const script = document.createElement('script')
