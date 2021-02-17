@@ -78,7 +78,7 @@ export default ({ setRouter }) => {
 						margin-bottom: 1rem;
 					`}
 				>
-					<a href="https://ecolab.ademe.fr" target="_blank">
+					<a href="https://datagir.ademe.fr" target="_blank">
 						<svg
 							style={{ marginRight: '1rem', height: '6vh', display: 'block' }}
 							width="109"
