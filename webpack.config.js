@@ -61,7 +61,7 @@ module.exports = {
 		isDevelopment && new ReactRefreshWebpackPlugin(),
 		new CopyPlugin(['iframeResizer.contentWindow.min.js']),
 		new HtmlWebpackPlugin({
-			title: 'Ecolab transport',
+			title: 'Mon impact transport - Datagir',
 			chunks: ['index'],
 			template: 'index.html',
 			...(prodPath ? { base: prodPath } : {}),
