@@ -47,7 +47,10 @@ export default ({ distance, setDistance }) => (
 			{suggestions.map(({ titre, km }) => (
 				<li key={titre}>
 					<a
-						onClick={() => setDistance(km)}
+						onClick={() => {
+							window._paq.push(['trackEvent', 'Suggestion', titre, km])
+							setDistance(km)
+						}}
 						css={distance === km ? `background: yellow;` : ``}
 					>
 						<Emoji emoji={titre} />
