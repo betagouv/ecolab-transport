@@ -48,8 +48,8 @@ export default ({ distance, setDistance }) => (
 				<li key={titre}>
 					<a
 						onClick={() => {
-							window._paq.push(['trackEvent', 'Suggestion', titre, km])
 							setDistance(km)
+							window._paq.push(['trackEvent', 'Suggestion', titre, km])
 						}}
 						css={distance === km ? `background: yellow;` : ``}
 					>
