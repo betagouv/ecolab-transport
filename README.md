@@ -1,3 +1,5 @@
+> Ce simulateur est sorti en v2 et est maintenant hébergé sur le github de datagir : https://github.com/datagir/monimpacttransport
+
 # ecolab-transport
 
 - un comparateur intéractif de l'impact sur le climat des différents modes de déplacement, développé en Javascript / React, publié sur https://monimpacttransport.fr
